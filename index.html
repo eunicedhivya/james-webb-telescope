@@ -19,16 +19,17 @@
     <div class="tv9-interactive">
         <section id="intro">
             <div class="intro-content">
-                <h1>Decoding the James Webb Space Telescope</h1>
-                <p>The James Webb Space Telescope was originally known as the Next Generation Space Telescope and has
+                <h1 class="main-title">Decoding the James Webb Space Telescope</h1>
+                <p class="main-desc">The James Webb Space Telescope was originally known as the Next Generation Space
+                    Telescope and has
                     been in development
                     for over 30 years.
                 </p>
             </div>
         </section>
         <section id="origins">
-            <img src="assets/imgs/james-webb-1.png" alt="James Web Telescope">
-            <div class="section-content">
+            <img src="assets/imgs/james-webb-1.png" alt="James Web Telescope" id="origins-image">
+            <div class="section-content" id="origins-para1">
                 <h2>Origins</h2>
                 <p>In 1989, the Space Telescope Science Institute (STScI) in Baltimore, Maryland, and NASA co-hosted the
                     Next
@@ -40,7 +41,7 @@
                     wavelengths
                     and be equipped with a mirror larger than 4 meters.</p>
             </div>
-            <div class="section-content">
+            <div class="section-content" id="origins-para2">
                 <p>Construction on Webb began in 2004. In 2005, the European Space Agency’s Centre Spatial Guyanais
                     (CSG) spaceport in French Guiana was chosen as the launch site and an Ariane 5 rocket as the launch
                     vehicle. By 2011, all 18 mirror segments were finished and proven through testing to meet required
@@ -92,9 +93,15 @@
             </div>
         </section>
         <section id="jwst-3d">
-            <div class="3d-interactive">
-                3D Placeholder
-            </div>
+            <!-- <div class="interactive-3d">
+
+            </div> -->
+            <canvas id="jwst-model"></canvas>
+            <!-- <div class="interactive-3d">
+                <iframe style="width: 100%; height: 100%; overflow: hidden;"
+                    src="http://localhost/tv9-interactives/james-webb-telescope/atlas-3d.html" width="100" height="100"
+                    scrolling="no">Iframes not supported</iframe>
+            </div> -->
         </section>
         <section id="jwst-deployment">
             <div class="section-content">
@@ -153,6 +160,32 @@
             </div>
         </section>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+    <script src="js/OrbitControls-ofb.js"></script>
+    <script src="js/threex.domevents.js"></script>
+    <script src="jwast-3d.js"></script>
+    <!-- <script src="js/threed-atlas.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(".main-title", { opacity: 0, duration: 1, y: -50 });
+        gsap.from(".main-desc", { opacity: 0, duration: 1, y: -50 });
+
+        gsap.from("#origins-image", { opacity: 0, duration: 1 });
+        gsap.from("#origins-para1", { opacity: 0, duration: 1, x: 50 });
+        gsap.from("#origins-para2", { opacity: 0, duration: 1, x: -50 });
+
+
+
+    </script>
 </body>
 
 </html>

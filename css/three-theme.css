@@ -1,0 +1,866 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
+body{
+    background-color: #FFF;
+    /* background-color: #000; */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    /* overflow: hidden; */
+    position: relative;
+}
+
+/* body.home-pg:before, body.mission-landing-pg:before, body.mission-objective-pg:before,
+body.mission-pg:before, body.copter-pg:before, body.rocket-pg:before {
+    background-image: url(http://thefederal.com/embed/perseverance-nasa-master/img/Wan-IFRA-award-stamp-left.png);
+    background-size: 149px 153px;
+    background-position: top left;
+    background-position-x: 1%;
+    background-repeat: no-repeat;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 153px;
+    top: 0;
+} */
+
+.transition-fade {
+    transition: 500s;
+    opacity: 1;
+}
+  
+html.is-animating .transition-fade {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+}
+html.is-leaving .transition-fade {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+}
+
+
+
+/* Modelbox - Overview*/
+/* ======================================== */
+
+.modelbox {
+    width: 30%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    right: 0;
+}
+
+.copter-model-text h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    color: #FFFFFF;
+}
+
+.copter-model-text p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    color: #FFFFFF;
+}
+
+.model-close-btn, .close3dmodel{
+    border: none;
+    background-color: #000;
+    color: #FFF;
+    padding: 10px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    /*top: 15px;*/
+    /*left: 15px;*/
+    top: 34%;
+    left: 27px;
+}
+
+body{ transition: all 1s; }
+
+.model3dbox{
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+}
+.model3dbox .vertical-center{
+    width: 70%;
+}
+.model3dbox h3{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    color: #FFFFFF;
+}
+.model3dbox p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    color: #FFFFFF;
+}
+
+#resetCam, #zoom-in, #zoom-out{
+    background-color: #000;
+    color: #FFF;
+    border: none;
+    transition: all .2s;
+    padding: 5px 10px;
+    position: absolute;
+}
+#resetCam{ right: 20px; top: 20px; }
+#zoom-in{ left: 20px; top: 20px; }
+#zoom-out{ left: 55px; top: 20px; }
+#resetCam:hover{
+    background-color: #fd5f5f;
+    color: #000000;
+}
+
+.video-one-model,.warning-text-model{
+    background-color: rgb(0 0 0 / 0.85);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 20;
+    color: #FFF;
+}
+
+.warning-text-model{
+    font-family: 'Montserrat', sans-serif; 
+    text-align: left !important;
+}
+
+#closevideomodel, #closewarntxtmodel{
+    display: block;
+    text-align: center;
+    background-color: #333;
+    border: none;
+    padding: 5px 6px;
+    color: #FFF;
+    font-size: 14px;
+    width: fit-content;
+    height: fit-content;
+}
+
+/* Mission Page - Overview*/
+/* ======================================== */
+/* .mission-landing-pg .main-navigation{
+    position: absolute;
+    bottom: -36px;
+    left: 50%;
+}
+
+*/
+
+.mission-overview-btn, .mission-landing-btn, .mission-objectives-btn{
+    color: #FFF; text-decoration: none; letter-spacing: 0.02em; font-weight: bold;
+}
+.mission-overview-btn:hover, .mission-landing-btn:hover, .mission-objectives-btn:hover{
+    color: #000; 
+}
+
+.mission-home, .mission-overview, .mission-landing, .mission-objectives{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mission-home .mission-nav{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    text-align: center;
+    width: 600px;
+    margin: 0 auto 75px auto;
+    
+}
+
+.mission-home .mission-nav a img{
+    width: 100px;
+}
+.mission-home img.rocket-atlas{
+    width: 800px;
+}
+
+.mission-home .mission-nav a{ 
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFF;
+    text-align: center;
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    line-height: 10px;
+}
+
+.mission-overview{
+    display: grid;
+    grid-template-columns: 30% 55% 15%;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.mission-overview .point{
+    margin: 0 0 20px 0;
+}
+
+.mission-overview header{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    margin: -5px 0 60px -18px;
+    color: #FFF;
+}
+
+.mission-overview .point p:first-child{
+    font-weight: bold;
+}
+
+.mission-landing{
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    align-items: center;
+}
+.mission-landing header{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    width: 200px;
+    margin: 0 auto;
+    color: #FFF;
+}
+.mission-objectives{
+    display: grid;
+    grid-template-columns: 15% 80% 20%;
+    align-items: center;
+}
+.mission-objectives header{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    width: 200px;
+    margin: 0 auto;
+    color: #FFF;
+}
+
+.mission-objectives .coltwo  img{width: 100%; margin-bottom: 15px;}
+.mission-landing header img{ width: 100px!important; }
+.mission-landing .colone{ text-align: left; }
+.mission-landing .colthree{ text-align: right; }
+.mission-landing .coltwo{ margin-top:-20px }
+.mission-landing .coltwo img{ width: 100%; margin-bottom: 15px;}
+
+
+.rocket-content {
+    display: grid;
+    /* grid-template-columns: 50% 50%; */
+    grid-template-columns: 40% 40% 20%;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.vehicle-tag{ font-size: 12px;}
+.vehicle-name{ font-size: 40px; margin: 0 0 15px 0; line-height: 36px; color: #FFF;}
+
+.rockettext a, .helicopterBtn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    background-color: #000000;
+    text-decoration: none !important;
+    margin: 0 0 0 0;
+    color: #FFFFFF;
+    border: none;
+    text-transform: uppercase;
+    padding: 3px 6px;
+    cursor: pointer;
+}
+
+.rockettext a:hover, .helicopterBtn:hover {
+    background-color: #fd5f5f;
+    color: #FFF;
+}
+
+.atlasdiv{ position: relative;}
+
+.atlasbtn{
+    background-color: #fd5f5f;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid rgb(236, 35, 35, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 0;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    transition: all .2s;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.atlasbtn:hover{  background-color: #000000; color: #FFF;}
+
+/* .atlasdiv::before{
+    content: 'Tap to know more';
+    width: 90px;
+    height: 90px;
+    background-color: #fd5f5f;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    padding: 20px 16px 25px 16px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    line-height: 14px;
+    color: #FFFFFF;
+    margin-left: -35px;
+    border: 5px solid rgb(236, 35, 35, 0.5);
+}
+.atlasdiv:hover::before{
+    background-color: #000000;
+} */
+
+
+/* html, body {
+    overflow: hidden;
+    height: 100%;
+} */
+
+/*Home page*/
+.home-pg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-page-rover {
+    width: 90%;
+    margin: 50px auto 0 auto;
+}
+.homepage-content {
+    text-align: center;
+}
+.homepage-content .headcaption {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 auto;
+}
+.homepage-content .tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+    margin-bottom: 20px;
+}
+#border-bottom {
+    position: absolute;
+    width: 7%;
+    left: 47%;
+    top: 17.5%;
+    height: 1px;
+    background: #000;
+}
+.homepg-border#border-bottom {
+    top: 39.5%;
+}
+.homepage-content .leadtext {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+}
+.preloader-wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; 
+  bottom: 0;
+  background: rgba(0,0,0,1);
+  z-index : 4; 
+}
+
+.percentage {
+  z-index: 100;
+  border: 1px solid #ccc;
+  text-align:center;
+  color: #fff;
+  line-height: 30px;
+  font-size : 15px;
+  display: none;
+}
+
+.loader,
+.percentage{
+  height: 15px;
+  max-width: 500px; 
+  /* border: 2px solid #69AF23; */
+  border: 3px solid #214e34;
+  background: #214e34;
+  border-radius: 20px;
+  font-weight: 300;
+  position: absolute; 
+  top: 0; 
+  bottom: 0; 
+  left: 0; 
+  right: 0;
+  margin : auto; 
+}
+.loader:after,
+.percentage:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.trackbar {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  overflow: hidden;
+  position: relative;
+  opacity: 0.99;
+}
+
+.loadbar {
+  width: 0%;
+  height: 100%;
+  /* background: repeating-linear-gradient(
+  45deg, 
+    #008737, 
+    #008737 10px, 
+    #69AF23 10px,
+    #69AF23 20px
+  ); Stripes Background Gradient */
+  background: #fff;
+  /* box-shadow: 0px 0px 14px 1px #008737;  */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: flicker 5s infinite;
+  overflow: hidden;
+}
+
+.glow {
+  width: 0%;
+  height: 0%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 60px 10px #008737;
+  position: absolute;
+  bottom: -5px;
+  animation: animation 5s infinite;
+}
+
+.loadtext {
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/* Copter page */
+.copter-home-content{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+.copter-home-content .colone{ text-align: center; }
+.copter-home-content .colone img{ width: 100%; }
+.copter-home-content a{ 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    background-color: #000000;
+    text-decoration: none;
+    margin: 0 0 0 0;
+    color: #FFFFFF;
+    border: none;
+    text-transform: uppercase;
+    padding: 3px 6px;
+    cursor: pointer; 
+}
+.copter-home-content p{     
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 18px; 
+}
+
+.videoone, .warnicon{ cursor: pointer; }
+
+.videoone p, .warnicon p{     
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 10px;
+    /* margin-bottom: 15px; */
+    line-height: 15px; 
+}
+
+.warning-copter{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 0 auto;
+}
+.warning-copter img{
+    width: 45px !important;
+    margin-bottom: 2px;
+}
+
+.explore3d a{
+    background-color: transparent;
+    font-size: 10px;
+    color: #000;
+}
+.explore3d a:hover{
+    font-weight: bold;
+    color: #000;
+    background-color: transparent;
+}
+.explore3d p{ font-size: 10px; line-height: 15px;}
+
+/* .warning-copter{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    width: 400px;
+    align-items: end;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    cursor: pointer;
+
+} */
+.warnicon, .videoone{     
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+@keyframes animation {
+  10% {
+    opacity: 0.9;
+  }
+  30% {
+    opacity: 0.86;
+  }
+  60% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.75;
+  }
+}
+.obj-desc {
+    text-align: left;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 38% 60%;
+    align-items: center;
+}
+.obj-desc h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    /* margin-bottom: 28%; */
+    color: #000000;
+    font-weight: 700;
+    border-bottom: 3px solid #f00;
+    display: inline;
+    padding-bottom: 3%;
+}
+.obj-desc h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    line-height: 46px;
+    margin: 41px 0 0 0;
+    color: #000000;
+    font-weight: 400;
+}
+.obj-desc p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 17px;
+    margin: 0 20px;
+    padding-top: 9%;
+    text-align: left;
+}
+.svg-obj {
+    padding-top: 5%;
+    text-align: center;
+}
+
+#objective-a .svg-obj {
+    width: 100%;
+    margin: 0 auto;
+}
+#objective-b .svg-obj {
+    width: 66%;
+    margin: 0 auto;
+}
+#objective-c .svg-obj, #objective-d .svg-obj, #techdemo .svg-obj {
+    width: 50%;
+    margin: 0 auto;
+}
+.nav-tabs { border-bottom: none; transition: all .2s; }
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover, .nav-tabs>li>a, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+    border-color: transparent;
+    background: transparent;
+}
+.nav-tabs>li>a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000 !important;
+    font-weight: 400;
+    padding: 10px 0;
+    margin-right: 36px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li>a:hover {
+    border-bottom: 3px solid #f00;
+    font-weight: 700;
+}
+
+.warningicon3d{
+    width: 115px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 89px;
+    left: 50%;
+    transform: translateX(-50%) ;
+    font-family: 'Montserrat', sans-serif;
+}
+.warningicon3d img{
+    width: 46%;
+    text-align: center;
+    margin-left: 22px;
+    margin-bottom: 12px;
+    
+}
+
+.mobile-only, .zoomcontrols{ display:  none;}
+.desktop-only{ display:  block;}
+
+.split2two{
+    display: grid;
+    grid-template-columns: 12% 88%;
+    column-gap: 20px;
+    box-sizing: border-box;
+}
+
+.mission-landing .split2two img{
+    width: 46%;
+    margin-bottom: 2px;
+}
+
+.floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 7px); }
+    to   { transform: translate(0, -0px); }    
+}
+
+.nav-tabs { width: fit-content; margin: 0 auto; }
+.main-nav-prompt{
+    display: block;
+    position: absolute;
+    bottom: 51px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    text-align: center;
+}
+.homepage-content .leadtext span{
+    font-size: 10px
+}
+
+@media screen and (min-width: 767px) {
+
+    .nav-tabs>li>a { width: 82px; height: 40px; }
+    /* .nav-tabs { margin-left: 44px; } */
+   
+}
+@media screen and (min-width: 1px) and (max-width: 767px) {
+     body.home-pg:before, body.mission-landing-pg:before, body.mission-objective-pg:before,
+body.mission-pg:before, body.copter-pg:before, body.rocket-pg:before {background-size: 85px 89px;}
+    .mission-home .mission-nav {
+        width: 100%;
+        margin: 0 0 30px 0;
+        max-width: 375px;
+    }
+    .mission-home img.rocket-atlas { width: 100%; }
+    .mission-overview { grid-template-columns: 100%; padding: 0 25px; display: grid; height: 600px; overflow: scroll;}
+    .mission-overview header { margin: 0; color: #FFF; }
+    .mission-landing { grid-template-columns: 100%; padding: 0 25px;}
+    .mission-landing .coltwo{ height: 500px; overflow: scroll; }
+    .mission-objectives { grid-template-columns: 100%;     margin-top: -10%;}
+    .mission-objectives .coltwo{ height: 500px; overflow: scroll; padding: 0 23px; }
+    .mission-objectives .colone { padding: 0 10px;}
+    .rocket-content {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .atlasclose, .atlasopen {
+        width: 55%;
+        margin: 0 auto;
+        margin-top: -23%;
+    }
+    .rockettext {
+        padding: 0 17px !important;
+        box-sizing: border-box;
+    }
+    
+    .mission-objectives .colthree {
+        text-align: center;
+        padding: 0 10px;
+    }
+    .atlasbtn {
+        width: 80px;
+        height: 80px;
+        margin-left: 0;
+    }
+    .homepage-content {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    #border-bottom {
+        width: 20%;
+        left: 41.5%;
+        top: 25% !important;
+    }
+
+    .modelbox {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .copter-home-content {
+        grid-template-columns: 100%;
+        padding: 30px;
+        margin-top: -100px;
+    }
+    .copter-home-content .coltwo {
+        overflow: auto;
+        height: 260px;
+        margin-top: 20px;
+    }
+
+    .warning-copter{
+        width: 330px;
+    
+    }
+
+    .warning-text{
+        display: block;
+        background-color: #000;
+        padding: 10px;
+    }
+
+    .copy img{ width: 195px;}
+    
+    .obj-desc h3 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .obj-desc p {
+        font-size: 12px;
+        line-height: 16px;
+        padding-top: 0;
+    }
+    .obj-desc {
+        grid-template-columns: 38% 73%;
+    }
+
+
+    .nav-tabs>li>a {
+        margin-right: 0;
+        padding: 5px 10px
+    }
+
+    .mobile-only, .zoomcontrols{ display:  block;}
+    .desktop-only{ display:  none;}
+    .video-one-model iframe, #iframe-video {
+        width: 300px !important;
+    }
+
+    .split2two { grid-template-columns: 100%;}
+    .split2two .copy { order: 1;}
+    .split2two .videoone { order: 2;}
+    /* .split2two .videoone{margin-left: 100px; } */
+
+    .mission-landing .split2two img { width: 49px;}
+    .home-pg { padding: 0 7px }
+    .homepage-content .leadtext { margin-top: 35px;}
+    .main-page-rover { width: 96%; margin-top: 17%; }
+    .model-close-btn, .close3dmodel {
+        top: 21%;
+    }
+    
+}
