@@ -32,9 +32,12 @@ function init() {
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
     // camera.position.x = -3.38;
     // camera.position.y = 3;
-    // camera.position.z = 2.30;
-    camera.position.set(-9.22, 5.45, 17.2)
-    // camera.rotation.set(-0.65, -0.82, -0.51)
+    // camera.position.z = 600;
+    camera.position.set(0, 0, 600)
+    camera.rotation.set(0, 0, 0)
+
+    var camHelper = new THREE.CameraHelper(camera);
+    scene.add(camHelper);
 
 
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -49,22 +52,23 @@ function init() {
 
     document.body.appendChild(renderer.domElement);
 
-    // var axesHelper = new THREE.AxesHelper( 5 );
-    // scene.add( axesHelper );
+    var axesHelper = new THREE.AxesHelper(5);
+    scene.add(axesHelper);
 
-    // var size = 10;
-    // var divisions = 10;
+    var size = 10;
+    var divisions = 10;
 
-    // var gridHelper = new THREE.GridHelper( size, divisions );
-    // scene.add( gridHelper );
+    var gridHelper = new THREE.GridHelper(size, divisions);
+    scene.add(gridHelper);
+
 
     // Load the 3D model
     loader = new THREE.GLTFLoader();
     loader.load('scene.gltf', function (gltf) {
         model = gltf.scene
         // model.position.set(0, -1, 0)
-        model.scale.set(0.4, 0.4, 0.4)
-        model.rotation.set(0, -30, 0)
+        model.scale.set(0.3, 0.3, 0.3)
+        model.rotation.set(0, 15, 0)
         scene.add(model);
     });
     // loader.load('atlas.gltf', function(gltf){
@@ -78,6 +82,7 @@ function init() {
 
 
     var Hotspot = function (hotpoint_data) {
+
         "use strict";
 
         var self = this;
@@ -273,14 +278,35 @@ function init() {
     }
 
 
+    const light = new THREE.PointLight(0xffffff, 1, 1000);
+    light.position.set(150, 100, 400);
+    scene.add(light);
+
+    // const light2 = new THREE.PointLight(0xffffff, 1, 5000);
+    // light2.position.set(-500, 100, 400);
+    // scene.add(light2);
+
+    const light3 = new THREE.AmbientLight(0xffffff, 1, 500);
+    light3.position.set(0, 0, 0);
+    scene.add(light3);
+
+    // const pointLightHelper = new THREE.PointLightHelper(light);
+    // const pointLightHelper2 = new THREE.PointLightHelper(light2);
+    // scene.add(pointLightHelper, pointLightHelper2);
+
 
 
     // using reusable function addLight(source, xpos, ypos, zpos) 
-    addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -20.429, 3.363, -22.666);
-    addLight(new THREE.PointLight(0xFFFFFF, 0.4, 500), -8.801, 34.722, -11.382);
-    addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -0.409, 40.470, 23.343);
-    addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -13.785, -17.626, 12.763);
-    addLight(new THREE.DirectionalLight(0xFFFFFF, 1, 500), 33.947, -0.972, -8.920);
+    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -20.429, 3.363, 600);
+    // addLight(new THREE.PointLight(0xFFFFFF, 0.4, 500), -8.801, 34.722, 600);
+    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -0.409, 40.470, 600);
+    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -13.785, -17.626, 600);
+    // addLight(new THREE.AmbientLight(0xFFFFFF, 1, 200), 33.947, -0.972, 600);
+    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -20.429, 3.363, -22.666);
+    // addLight(new THREE.PointLight(0xFFFFFF, 0.4, 500), -8.801, 34.722, -11.382);
+    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -0.409, 40.470, 23.343);
+    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -13.785, -17.626, 12.763);
+    // addLight(new THREE.DirectionalLight(0xFFFFFF, 1, 500), 33.947, -0.972, -8.920);
 
     var controls = new THREE.OrbitControls(camera);
     controls.enableDamping = true;
@@ -462,50 +488,71 @@ function init() {
 
             }
         });
-        // _x: 8524455061537, _y: 41459456510254, _z: 19661279766863
-        gsap.to(camera.rotation, {
+        // model.rotation.set(0, -30, 0)
+        gsap.to(model.rotation, {
             duration: 1,
-            x: -0.306,
-            y: -0.472,
-            z: -0.143,
+            x: 0,
+            y: -30,
+            z: 0,
             onUpdate: () => {
                 controls.enabled = false;
+
             },
             onComplete: () => {
                 controls.enabled = true;
 
+
             }
         });
+        // _x: 8524455061537, _y: 41459456510254, _z: 19661279766863
+        // gsap.to(camera.rotation, {
+        //     duration: 1,
+        //     x: -0.306,
+        //     y: -0.472,
+        //     z: -0.143,
+        //     onUpdate: () => {
+        //         controls.enabled = false;
+        //     },
+        //     onComplete: () => {
+        //         controls.enabled = true;
+
+        //     }
+        // });
 
     })
     $('#resetCam').on("click", function () {
         controls.enabled = false;
         gsap.to(camera.position, {
             duration: 1,
-            x: -9.22,
-            y: 5.45,
-            z: 17.2,
+            x: 0,
+            y: 0,
+            z: 600,
             onUpdate: () => {
                 controls.enabled = false;
+                controls.update();
             },
             onComplete: () => {
                 controls.enabled = true;
-
+                // controls.reset();
+                // camera.lookAt(scene.position);
             }
         });
         gsap.to(camera.rotation, {
             duration: 1,
-            x: -0.30,
-            y: -0.47,
-            z: -0.14,
+            x: 0,
+            y: 0,
+            z: 0,
             onUpdate: () => {
                 controls.enabled = false;
+                controls.update();
+
             },
             onComplete: () => {
                 controls.enabled = true;
-
+                // controls.reset();
             }
         });
+
 
     })
 

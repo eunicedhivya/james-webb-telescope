@@ -10,8 +10,8 @@ html, body {
 }
 
 body{
-    background-color: #FFF;
-    /* background-color: #000; */
+    /* background-color: #FFF; */
+    background-color: #000;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: left bottom;
