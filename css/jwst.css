@@ -62,12 +62,19 @@ body{
 
 .interactive-3d{
     height: 500px;
+    border: 1px solid #000;
+}
+.interactive-3d iframe{
+    border: 1px solid #000;
 }
 
 .jwst-3d{
     width: 1000px;
     height: 500px;
 }
+
+
+
 
 @media (max-width:767px){
     #intro h1{

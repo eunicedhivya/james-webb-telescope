@@ -22,6 +22,8 @@ var instrumentdata = {
     "RD-180 Engine": { "subname": "Engine", "desc": "The RD-180 is a rocket engine designed and built in Russia. It features a dual combustion chamber, dual-nozzle design and is fueled by a RP-1/LOX mixture. Currently, RD-180 engines are used for the first stage of the Atlas V launch vehicle." }
 }
 
+
+
 init();
 // animate();
 
@@ -71,234 +73,38 @@ function init() {
         model.rotation.set(0, 15, 0)
         scene.add(model);
     });
-    // loader.load('atlas.gltf', function(gltf){
-    //     model = gltf.scene
-    //     // model.position.set(0, -1, 0)
-    //     model.scale.set(0.4, 0.4, 0.4)
-    //     model.rotation.set(0, -30, 0)
-    //     scene.add(model);
-    // });
-
-
-
-    var Hotspot = function (hotpoint_data) {
-
-        "use strict";
-
-        var self = this;
-
-        self.callback = function (_this, sprite, action) { };
-
-        self.data = hotpoint_data;
-
-        self.sprite = null;
-
-        self.group = new THREE.Group();
-
-        self.entities = {};
-
-        self.makeVisible = function (b) { self.entities.red_dot_transparent.visible = !b; };
-
-        // --------------------------------
-        // radius : 0.04, widthSegments : 32, heightSegments : 32, phiStart : 0, phiLength : 2 * Math.PI, thetaStart : 0, thetaLength : Math.PI
-        var hotspot_geometry = new THREE.SphereGeometry(
-            0.2, 32, 32, 0, 2 * Math.PI, 0, Math.PI
-        );
-
-        var hot_spot = self.entities.hot_spot = new THREE.Mesh(hotspot_geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
-
-        hot_spot.position.set(self.data.position.x, self.data.position.y, self.data.position.z);
-
-        hot_spot.callback = function (action) { self.callback(self, hot_spot, action); };
-
-        hot_spot.name = self.data.name;
-
-
-        var hot_spot_transparent = self.entities.hot_spot_transparent = new THREE.Mesh(hotspot_geometry, new THREE.MeshBasicMaterial({ color: 0xff0000, transparent: true, opacity: 0.3 }));
-        hot_spot_transparent.scale.set(1.5, 1.5, 1.5);
-        hot_spot_transparent.position.set(self.data.position.x, self.data.position.y, self.data.position.z);
-        hot_spot_transparent.visible = true
-        hot_spot_transparent.raycast = function () { };
-
-        self.group.add(hot_spot);
-        self.group.add(hot_spot_transparent);
-
-        return this;
-    };
-
-    var hotpoints = datapoints
-
-    var hotpoints_objects_array = [];
-
-    hotpoints.forEach(function (currentValue, index, array) {
-        // console.log("hotpoints", currentValue)
-        var hot_spot = new Hotspot(currentValue, index, array);
-
-        scene.add(hot_spot.group);
-
-        hotpoints_objects_array.push(hot_spot);
-
-        hot_spot.callback = function (_this, sprite, action) {
-
-            var e;
-            if (action === "click") {
-                e = document.createEvent('Event');
-                e.initEvent("hotspot-clicked", true, true);
-                e.hotpoint = _this;
-                document.dispatchEvent(e);
-            }
-            else if (action === "hover") {
-                e = document.createEvent('Event');
-                e.initEvent("hotspot-hover", true, true);
-                e.hotpoint = _this;
-                document.dispatchEvent(e);
-            }
-            else if (action === "focus") {
-                e = document.createEvent('Event');
-                e.initEvent("hotspot-clicked", true, true);
-                e.hotpoint = _this;
-                document.dispatchEvent(e);
-            }
-            else if (action === "out") {
-                e = document.createEvent('Event');
-                e.initEvent("hotspot-out", true, true);
-                e.hotpoint = _this;
-                document.dispatchEvent(e);
-            }
-            else if (action === "blur") {
-                e = document.createEvent('Event');
-                e.initEvent("hotspot-clicked", true, true);
-                e.hotpoint = _this;
-                document.dispatchEvent(e);
-            }
-        };
-    });
-
-
-    var hot_point_name = document.createElement('span');
-    hot_point_name.innerHTML = "";
-    hot_point_name.style.position = "absolute";
-    hot_point_name.style.display = "none";
-    hot_point_name.style.color = "#000";
-    hot_point_name.style.fontFamily = "Lato, sans-serif";
-    hot_point_name.style.fontSize = "20px";
-    hot_point_name.style.fontWeight = "400";
-    hot_point_name.style.backgroundColor = "rgba(255,255,255,.75)";
-    hot_point_name.style.padding = "6px 16px";
-
-    hot_point_name.hotpoint = null;
-
-    document.body.appendChild(hot_point_name);
-
-    document.addEventListener("hotspot-hover", function (e) {
-
-        console.log("hotpointhover", e);
-        // var selectedHotspot = e.hotpoint.entities.hot_spot_transparent
-        // selectedHotspot.visible = true
-        // if ($('#main-column-container').hasClass('out'))
-        //     return;
-
-        // hot_point_name.hotpoint = e.hotpoint;
-        // hot_point_name.style.display = "";
-
-        // setHotPointNamePosition( e.hotpoint );
-    });
-
-    document.addEventListener("hotspot-out", function (e) {
-
-        console.log("hotpointout", e);
-        // var selectedHotspot = e.hotpoint.entities.hot_spot_transparent
-        // selectedHotspot.visible = false
-        // let drawer = state.drawer;
-        // let camera = drawer.getCamera();
-        // let ipm = state.inputmanager;
-        // let canvas = drawer.getRenderer().domElement;
-
-        // let hotpoint = e.hotpoint;
-
-        // let entity = hotpoint.entities.red_dot_transparent;
-
-        // hot_point_name.style.display = "none";
-        // hot_point_name.hotpoint = null;
-    });
-
-    document.addEventListener("hotspot-clicked", function (e) {
-        console.log("Trigger camera animation", e.hotpoint)
-        controls.enabled = false;
-        var hotpoint_pos = e.hotpoint.data.camerapos
-        var hotpoint_rot = e.hotpoint.data.camerarot
-
-        controls.maxPolarAngle = Math.PI / 2;
-        controls.minPolarAngle = 0;
-
-        gsap.to(camera.position, {
-            duration: 1,
-            x: hotpoint_pos.x,
-            y: hotpoint_pos.y,
-            z: hotpoint_pos.z,
-            onUpdate: () => {
-                controls.enabled = false;
-            },
-            onComplete: () => {
-                controls.enabled = true;
-
-            }
-        });
-
-        gsap.to(camera.rotation, {
-            duration: 1,
-            x: hotpoint_rot.x,
-            y: hotpoint_rot.y,
-            z: hotpoint_rot.z,
-            onUpdate: () => {
-                controls.enabled = false;
-            },
-            onComplete: () => {
-                controls.enabled = true;
-
-
-            }
-        });
-
-    });
-
-
-    // // console.log(scene)
-
-    // // raycaster = new THREE.Raycaster();
-    // // mouse = new THREE.Vector2();
 
     //add a light
-    function addLight(source, xpos, ypos, zpos) {
-        var light = source;
-        light.position.x = xpos;
-        light.position.y = ypos;
-        light.position.z = zpos;
-        scene.add(light);
-    }
+    // function addLight(source, xpos, ypos, zpos) {
+    //     var light = source;
+    //     light.position.x = xpos;
+    //     light.position.y = ypos;
+    //     light.position.z = zpos;
+    //     scene.add(light);
+    // }
 
 
-    const light = new THREE.PointLight(0xffffff, 1, 1000);
-    light.position.set(150, 100, 400);
+    const light = new THREE.PointLight(0xffffff, 1, 15000);
+    light.position.set(0, 100, 600);
     scene.add(light);
 
-    // const light2 = new THREE.PointLight(0xffffff, 1, 5000);
-    // light2.position.set(-500, 100, 400);
-    // scene.add(light2);
+    const light2 = new THREE.PointLight(0xffffff, 1, 1000);
+    light2.position.set(0, -100, 400);
+    scene.add(light2);
 
-    const light3 = new THREE.AmbientLight(0xffffff, 1, 500);
-    light3.position.set(0, 0, 0);
+    const light3 = new THREE.AmbientLight(0xffffff, 1, 50);
+    light3.position.set(0, 50, -600);
     scene.add(light3);
 
     // const pointLightHelper = new THREE.PointLightHelper(light);
-    // const pointLightHelper2 = new THREE.PointLightHelper(light2);
-    // scene.add(pointLightHelper, pointLightHelper2);
+    // // const pointLightHelper2 = new THREE.PointLightHelper(light2);
+    // scene.add(pointLightHelper);
 
 
 
     // using reusable function addLight(source, xpos, ypos, zpos) 
-    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -20.429, 3.363, 600);
-    // addLight(new THREE.PointLight(0xFFFFFF, 0.4, 500), -8.801, 34.722, 600);
+    // addLight(new THREE.AmbientLight(0xFFFFFF, 1, 500), 0, 0, 0);
+    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), 0, 0, 0);
     // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -0.409, 40.470, 600);
     // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -13.785, -17.626, 600);
     // addLight(new THREE.AmbientLight(0xFFFFFF, 1, 200), 33.947, -0.972, 600);
@@ -308,13 +114,10 @@ function init() {
     // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -13.785, -17.626, 12.763);
     // addLight(new THREE.DirectionalLight(0xFFFFFF, 1, 500), 33.947, -0.972, -8.920);
 
+
+
     var controls = new THREE.OrbitControls(camera);
     controls.enableDamping = true;
-    // controls.maxPolarAngle = Math.PI/2;
-    controls.enableDamping = true;
-    // controls.maxPolarAngle = Math.PI/2;
-    // controls.minDistance = 200;
-    // controls.maxDistance = 200;
 
     if ($(window).width() < 756) {
         controls.enableZoom = false;
@@ -358,116 +161,9 @@ function init() {
 
     render()
 
+
+
     var pickPointObject = null;
-
-    function onMouseMove(event) {
-
-        var raycaster = new THREE.Raycaster();
-        var mouse = new THREE.Vector2();
-
-        // event.preventDefault();
-
-        var rect = renderer.domElement.getBoundingClientRect();
-
-        var clientX = event.clientX - rect.left;
-        var clientY = event.clientY - rect.top;
-
-        if (clientX < 0 || event.clientX > (renderer.domElement.clientWidth + rect.left))
-            return;
-
-        if (clientY < 0 || event.clientY > (renderer.domElement.clientHeight - rect.top))
-            return;
-
-        mouse.x = (clientX / renderer.domElement.clientWidth) * 2 - 1;
-        mouse.y = - (clientY / renderer.domElement.clientHeight) * 2 + 1;
-
-        raycaster.setFromCamera(mouse, camera);
-
-        var intersects = raycaster.intersectObjects(scene.children, true);
-
-
-        roverparts = ["Spacecraft", "Fairing", "Centaur upper stage", "RL-10-1 Engine", "Atlas V Booster", "Solid Rocket Booster", "RD-180 Engine"]
-
-        if (intersects.length > 0) {
-            // console.log("intersects", event)
-
-
-            if (roverparts.indexOf(intersects[0].object.name) >= 0) {
-
-                intersects[0].object.callback("hover");
-
-            } else {
-                //    console.log("Other elements", intersects[0].object)
-            }
-
-
-
-        } else {
-            // console.log("No elements touched")
-        }
-    }
-
-
-    function onClick(event) {
-
-        var raycaster = new THREE.Raycaster();
-        var mouse = new THREE.Vector2();
-
-        var rect = renderer.domElement.getBoundingClientRect();
-
-        var clientX = event.clientX - rect.left;
-        var clientY = event.clientY - rect.top;
-
-        if (clientX < 0 || event.clientX > (renderer.domElement.clientWidth + rect.left))
-            return;
-
-        if (clientY < 0 || event.clientY > (renderer.domElement.clientHeight - rect.top))
-            return;
-
-        mouse.x = (clientX / renderer.domElement.clientWidth) * 2 - 1;
-        mouse.y = - (clientY / renderer.domElement.clientHeight) * 2 + 1;
-
-        raycaster.setFromCamera(mouse, camera);
-
-        var intersects = raycaster.intersectObjects(scene.children, true);
-
-        roverparts = ["Spacecraft", "Fairing", "Centaur upper stage", "RL-10-1 Engine", "Atlas V Booster", "Solid Rocket Booster", "RD-180 Engine"]
-
-        function global_area_clicked() {
-            var e = document.createEvent('Event');
-            e.initEvent("app-global-area-clicked", true, true);
-            e.event = event;
-            document.dispatchEvent(e);
-        }
-
-        if (intersects.length > 0) {
-
-            if (roverparts.indexOf(intersects[0].object.name) >= 0) {
-                console.log("intersects", intersects[0].object.name)
-                var selectobj = intersects[0].object.name
-                document.getElementById("Objectname").innerHTML = "<h3>" + selectobj + "</h3>"
-                // document.getElementById("Objectname").innerHTML += "<p>"+instrumentdata[selectobj]['subname']+"</p>"
-                document.getElementById("Objectname").innerHTML += "<p>" + instrumentdata[selectobj]['desc'] + "</p>"
-                console.log("intersects", intersects[0].object.material.color)
-                $('.model3dbox').css('display', 'block');
-                $('.model3dbox').addClass('animate__fadeInLeft');
-                $('.model3dbox').removeClass('animate__fadeOutLeft');
-                // $('.label').removeClass('animate__fadeOutRight');
-                intersects[0].object.callback("click");
-            } else {
-                global_area_clicked();
-            }
-
-
-        } else {
-            global_area_clicked();
-        }
-
-
-    }
-
-    window.addEventListener('mousemove', onMouseMove, false);
-    window.addEventListener('click', onClick, false);
 
     $('.close3dmodel').on("click", function () {
         // $('.model3dbox').css('display', 'block');
@@ -559,6 +255,141 @@ function init() {
     $('body').on("click", function () {
         $('.warningicon3d').fadeOut("slow");
     })
+
+    // const Boxmesh = new THREE.Mesh(
+    //     new THREE.BoxGeometry(400, 400, 400),
+    //     new THREE.MeshPhongMaterial({
+    //         color: 0x156289,
+    //         emissive: 0x072534,
+    //         side: THREE.DoubleSide,
+    //         shading: THREE.FlatShading
+    //     })
+    // );
+    // scene.add(Boxmesh);
+
+    var spritey = makeTextSprite(" " + "+" + " ", { fontsize: 32, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    spritey.position.set(250, 250, 250);
+    scene.add(spritey);
+
+    var spritey2 = makeTextSprite(" " + "+" + " ", { fontsize: 32, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    spritey2.position.set(-250, -250, -250);
+    scene.add(spritey2);
+
+    // =======================================================
+    // Anotation
+    // ==========================================================
+
+    function makeTextSprite(message, parameters) {
+        if (parameters === undefined) parameters = {};
+
+        var fontface = parameters.hasOwnProperty("fontface") ?
+            parameters["fontface"] : "Arial";
+
+        var fontsize = parameters.hasOwnProperty("fontsize") ?
+            parameters["fontsize"] : 18;
+
+        var borderThickness = parameters.hasOwnProperty("borderThickness") ?
+            parameters["borderThickness"] : 4;
+
+        var borderColor = parameters.hasOwnProperty("borderColor") ?
+            parameters["borderColor"] : { r: 0, g: 0, b: 0, a: 1.0 };
+
+        var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
+            parameters["backgroundColor"] : { r: 255, g: 255, b: 255, a: 1.0 };
+
+        //var spriteAlignment = parameters.hasOwnProperty("alignment") ?
+        //	parameters["alignment"] : THREE.SpriteAlignment.topLeft;
+
+        // var spriteAlignment = THREE.SpriteAlignment.topLeft;
+
+
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext('2d');
+        context.font = "Bold " + fontsize + "px " + fontface;
+
+        // get size data (height depends only on font size)
+        var metrics = context.measureText(message);
+        var textWidth = metrics.width;
+
+        // background color
+        context.fillStyle = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
+            + backgroundColor.b + "," + backgroundColor.a + ")";
+        // border color
+        context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
+            + borderColor.b + "," + borderColor.a + ")";
+
+        context.lineWidth = borderThickness;
+        roundRect(context, borderThickness / 2, borderThickness / 2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
+        // 1.4 is extra height factor for text below baseline: g,j,p,q.
+
+        // text color
+        context.fillStyle = "rgba(255, 255, 255, 1.0)";
+        context.textAlign = "center"
+
+        // context.fillText(message, borderThickness, fontsize + borderThickness);
+        context.fillText(message, borderThickness + 30, fontsize + borderThickness + 30);
+
+        // canvas contents will be used for a texture
+        var texture = new THREE.Texture(canvas)
+        texture.needsUpdate = true;
+
+        var spriteMaterial = new THREE.SpriteMaterial(
+            { map: texture, useScreenCoordinates: false, });
+        var sprite = new THREE.Sprite(spriteMaterial);
+        sprite.scale.set(100, 50, 1.0);
+        return sprite;
+    }
+
+    function roundRect(ctx, x, y, w, h, r) {
+        // ctx.beginPath();
+        // ctx.moveTo(x + r, y);
+        // ctx.lineTo(x + w - r, y);
+        // ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+        // ctx.lineTo(x + w, y + h - r);
+        // ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+        // ctx.lineTo(x + r, y + h);
+        // ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+        // ctx.lineTo(x, y + r);
+        // ctx.quadraticCurveTo(x, y, x + r, y);
+        // ctx.closePath();
+        // ctx.fill();
+        // ctx.stroke();
+        var x = 32;
+        var y = 53;
+        var radius = 30;
+        var startAngle = 0;
+        var endAngle = Math.PI * 2;
+
+        ctx.fillStyle = 'rgb(0, 0, 0)';
+        ctx.beginPath();
+        ctx.arc(x, y, radius, startAngle, endAngle);
+        ctx.fill();
+
+        ctx.strokeStyle = 'rgb(255, 255, 255)';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, startAngle, endAngle);
+        ctx.stroke();
+    }
+
+
+
+
+    var domEvents = new THREEx.DomEvents(camera, renderer.domElement)
+
+    domEvents.addEventListener(spritey, 'click', function (event) {
+        console.log('you clicked on the mesh')
+    }, false)
+    domEvents.addEventListener(spritey2, 'click', function (event) {
+        console.log('you clicked on the mesh2')
+    }, false)
+
+
+
+
+    // =======================================================
+    // End of Anotation
+    // ==========================================================
 
 
 
