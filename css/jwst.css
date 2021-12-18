@@ -57,14 +57,14 @@ body{
     margin-left: auto ;
     margin-right: auto ;
     position: relative;
-    height: 800px;
+    height: 850px;
     margin-bottom: 30px;
 }
 
 
 .the-range .tr-pointedLight{
     position: absolute;
-    top: 0;
+    top: 36px;
     width: 100%;
     z-index: 1;
 }
@@ -77,25 +77,23 @@ body{
 .the-range .tr-timeline{
     position: absolute;
     top: 0;
-    width: 100%;
     z-index: 3;
-    width: 13px;
+    width: 15px;
 }
 .the-range .tr-bigbang{
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;
+    width: 195px;
     z-index: 4;
-
 }
 .the-range .tr-hubble-icon{
     position: absolute;
     top: 0;
     width: 50px;
-    left: 31%;
-    transform: translateX(-31%);
+    left: 36%;
+    transform: translateX(-36%);
     z-index: 5;
     
 }
@@ -103,16 +101,16 @@ body{
     position: absolute;
     top: 0;
     width: 95px;
-    left: 75%;
-    transform: translateX(-75%);
+    left: 63%;
+    transform: translateX(-63%);
     z-index: 5;
 }
 .the-range .tr-hubble-limit{
     position: absolute;
     top: 70px;
     width: 2px;
-    left: 31%;
-    transform: translateX(-31%);
+    left: 36%;
+    transform: translateX(-36%);
     z-index: 5;
     
 }
@@ -120,16 +118,55 @@ body{
     position: absolute;
     top: 70px;
     width: 2px;
-    left: 70%;
-    transform: translateX(-70%);
+    left: 63%;
+    transform: translateX(-63%);
     z-index: 5;
 }
 .the-range .tr-txt-1{
     position: absolute;
-    bottom: 90px;
-    width: 12px;
+    bottom: 50px;
+    width: 10px;
     left: 30px;
     z-index: 5;
+}
+.the-range .tr-txt-2{
+    position: absolute;
+    bottom: 275px;
+    width: 10px;
+    left: 30px;
+    z-index: 5;
+}
+.the-range .tr-txt-3{
+    position: absolute;
+    top: 100px;
+    width: 10px;
+    left: 30px;
+    z-index: 5;
+}
+.the-range .tr-splitarrow{
+    position: absolute;
+    top: 392px;
+    width: 75px;
+    left: 39px;
+    z-index: 5;
+}
+.the-range .tr-txt-4{
+    position: absolute;
+    top: -19px;
+    width: 120px;
+    left: -4px;
+    z-index: 5;
+}
+.the-range .levels{
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 35px;
+    height: 1087px;
+    background-image: url('../assets/imgs/the-range/therange-legend.png');
+    z-index: 6;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 

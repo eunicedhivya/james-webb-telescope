@@ -53,4 +53,37 @@ document.addEventListener('DOMContentLoaded', function () {
         triggerHook: 0,
     }).setTween(timelineOrigin).setPin("#origins").addTo(controller)
 
+    var timelineTheRange = new TimelineMax();
+    timelineTheRange
+        .from('.tr-timeline', 4, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .from('.tr-pointedLight', 4, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .from('.tr-gridLine', 4, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .from('.tr-bigbang', 4, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .from('.tr-hubble-icon', 4, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .from('.tr-hubble-icon', 4, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+
+    var scene2 = new ScrollMagic.Scene({
+        triggerElement: '.the-range',
+        duration: '100%',
+        triggerHook: 0,
+    }).setTween(timelineTheRange).setPin(".the-range").addTo(controller)
+
 });
