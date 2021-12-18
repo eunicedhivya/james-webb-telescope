@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
     timelineIntro
         .from('.main-title', 2, {
             x: 0,
-            y: -150,
+            y: -50,
             ease: Power0.easeOut
         })
         .from('.main-desc', 2, {
             x: 0,
-            y: -150,
+            y: -50,
             opacity: 0,
             delay: 1,
             ease: Power0.easeOut
