@@ -32,10 +32,8 @@ function init() {
     var scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-    // camera.position.x = -3.38;
-    // camera.position.y = 3;
-    // camera.position.z = 600;
-    camera.position.set(0, 0, 600)
+
+    camera.position.set(0, 0, 300)
     camera.rotation.set(0, 0, 0)
 
     var camHelper = new THREE.CameraHelper(camera);
@@ -85,7 +83,7 @@ function init() {
 
 
     const light = new THREE.PointLight(0xffffff, 1, 15000);
-    light.position.set(0, 100, 600);
+    light.position.set(0, 100, 500);
     scene.add(light);
 
     const light2 = new THREE.PointLight(0xffffff, 1, 1000);
@@ -200,20 +198,6 @@ function init() {
 
             }
         });
-        // _x: 8524455061537, _y: 41459456510254, _z: 19661279766863
-        // gsap.to(camera.rotation, {
-        //     duration: 1,
-        //     x: -0.306,
-        //     y: -0.472,
-        //     z: -0.143,
-        //     onUpdate: () => {
-        //         controls.enabled = false;
-        //     },
-        //     onComplete: () => {
-        //         controls.enabled = true;
-
-        //     }
-        // });
 
     })
     $('#resetCam').on("click", function () {
@@ -222,7 +206,7 @@ function init() {
             duration: 1,
             x: 0,
             y: 0,
-            z: 600,
+            z: 450,
             onUpdate: () => {
                 controls.enabled = false;
                 controls.update();
@@ -267,12 +251,12 @@ function init() {
     // );
     // scene.add(Boxmesh);
 
-    var spritey = makeTextSprite(" " + "+" + " ", { fontsize: 32, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    spritey.position.set(250, 250, 250);
+    var spritey = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    spritey.position.set(0, 200, 100);
     scene.add(spritey);
 
-    var spritey2 = makeTextSprite(" " + "+" + " ", { fontsize: 32, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    spritey2.position.set(-250, -250, -250);
+    var spritey2 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    spritey2.position.set(-80, 100, 200);
     scene.add(spritey2);
 
     // =======================================================
@@ -286,7 +270,7 @@ function init() {
             parameters["fontface"] : "Arial";
 
         var fontsize = parameters.hasOwnProperty("fontsize") ?
-            parameters["fontsize"] : 18;
+            parameters["fontsize"] : 24;
 
         var borderThickness = parameters.hasOwnProperty("borderThickness") ?
             parameters["borderThickness"] : 4;
@@ -336,7 +320,7 @@ function init() {
         var spriteMaterial = new THREE.SpriteMaterial(
             { map: texture, useScreenCoordinates: false, });
         var sprite = new THREE.Sprite(spriteMaterial);
-        sprite.scale.set(100, 50, 1.0);
+        sprite.scale.set(200, 100, 2.0);
         return sprite;
     }
 
