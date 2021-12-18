@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .from('.main-title', 2, {
             x: 0,
             y: -50,
+            opacity: 0,
             ease: Power0.easeOut
         })
         .from('.main-desc', 2, {
