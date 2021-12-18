@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         duration: '100%',
         triggerHook: 0,
         offset: '0'
-    }).setTween().addTo(controller)
+    }).setTween(timelineIntro).setPin("#intro").addTo(controller)
 
 
     var timelineOrigin = new TimelineMax();
