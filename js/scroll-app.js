@@ -32,46 +32,27 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('#origins-para1', 4, {
-            y: 20,
-            opacity: 0,
-            ease: Power0.easeOut
-        })
         .from('#origins-para1', 50, {
+            y: 20,
             top: "100vh",
-            opacity: 1,
             ease: Power0.easeOut
         })
         .to('#origins-para1', 50, {
-            top: "0vh",
-            opacity: 1,
-            ease: Power0.easeOut
-        })
-        .to('#origins-para1', 4, {
             y: -20,
-            opacity: 0,
-            ease: Power0.easeOut
-        })
-        .from('#origins-para2', 4, {
-            y: 20,
-            opacity: 0,
+            top: "-100vh",
             ease: Power0.easeOut
         })
         .from('#origins-para2', 50, {
+            y: 20,
             top: "100vh",
-            opacity: 1,
             ease: Power0.easeOut
         })
         .to('#origins-para2', 50, {
-            top: "0vh",
-            opacity: 1,
-            ease: Power0.easeOut
-        })
-        .to('#origins-para2', 4, {
             y: -20,
-            opacity: 0,
+            top: "-100vh",
             ease: Power0.easeOut
         })
+
 
     var scene2 = new ScrollMagic.Scene({
         triggerElement: '#origins',
