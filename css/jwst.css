@@ -1,6 +1,9 @@
+/* html {
+  scroll-behavior: smooth;
+} */
+
 body{
     background-color: #000;
-  scroll-behavior: smooth;
 }
 
 .tv9-interactive {
@@ -216,21 +219,7 @@ body{
 }
 
 
-
-
-@media (max-width:767px){
-    #intro h1, #intro p{
-        position: absolute;
-    }
-    #intro h1{
-        top: 10%;
-    }
-    #intro p{
-        font-size: 17px;
-        bottom: 12%;
-    }
-
-    #origins {
+#origins {
         /* display: flex;
         flex-direction: column;
         align-items: center; */
@@ -238,6 +227,7 @@ body{
         height: 100vh;
         padding: 10px;
         box-sizing: border-box;
+        overflow: hidden;
     }
     #origins img, #origins #origins-para1, #origins #origins-para2{
         position: absolute;
@@ -255,16 +245,46 @@ body{
         width: 100%;
     }
 
-    /* #origins .section-content:first-child{
-        order: 1;
-        
+    #telescope-range{
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
     }
-    #origins .section-content:last-child{
-        order: 3;
+
+    #range-para1, #range-para2{
+        position: absolute;
+        top: 100vh;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 50%;
+        z-index: 10;
     }
-    #origins img{
-        order: 2;
+    /* #range-para1, #range-para2{
+        position: absolute;
+        top: 150vh;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 50%;
+        z-index: 10;
     } */
+
+
+
+@media (max-width:767px){
+    #intro h1, #intro p{
+        position: absolute;
+    }
+    #intro h1{
+        top: 10%;
+    }
+    #intro p{
+        font-size: 17px;
+        bottom: 12%;
+    }
+
+    #range-para1, #range-para2{
+        width: 100%;
+    }
 
 }
 @media (min-width:1024px){
@@ -280,28 +300,10 @@ body{
     #intro p{
         margin-top: 50vh;
     }
-    /* #intro h1{
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 800px;
-    }
-    #intro p{
-        font-size: 17px;
-        bottom: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-         width: 100%;
-        max-width: 800px;
-    } */
 
-    #origins{
-        margin: 50px 0 50px 0;
-        display: grid;
-        grid-template-columns: 50% 50%;
-        align-items: center;
-        justify-content: center;
+    #origins img, #origins #origins-para1, #origins #origins-para2{
+        width: 50%;
     }
+    
 
 }
