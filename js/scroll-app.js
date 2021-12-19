@@ -33,32 +33,42 @@ document.addEventListener('DOMContentLoaded', function () {
             ease: Power0.easeOut
         })
         .from('#origins-para1', 4, {
-            top: "100vh",
+            y: 20,
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('#origins-para1', 20, {
-            top: "80vh",
+        .from('#origins-para1', 50, {
+            top: "100vh",
             opacity: 1,
             ease: Power0.easeOut
         })
-        .to('#origins-para1', 20, {
+        .to('#origins-para1', 50, {
             top: "0vh",
+            opacity: 1,
+            ease: Power0.easeOut
+        })
+        .to('#origins-para1', 4, {
+            y: -20,
             opacity: 0,
             ease: Power0.easeOut
         })
         .from('#origins-para2', 4, {
-            top: "100vh",
+            y: 20,
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('#origins-para2', 20, {
-            top: "80vh",
+        .from('#origins-para2', 50, {
+            top: "100vh",
             opacity: 1,
             ease: Power0.easeOut
         })
-        .to('#origins-para2', 20, {
+        .to('#origins-para2', 50, {
             top: "0vh",
+            opacity: 1,
+            ease: Power0.easeOut
+        })
+        .to('#origins-para2', 4, {
+            y: -20,
             opacity: 0,
             ease: Power0.easeOut
         })
