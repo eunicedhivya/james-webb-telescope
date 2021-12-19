@@ -57,8 +57,13 @@ body{
     margin-left: auto ;
     margin-right: auto ;
     position: relative;
-    height: 850px;
+    height: 700px;
     margin-bottom: 30px;
+    overflow: hidden;
+}
+.the-range.active{
+    left: 50% !important;
+    transform: translateX(-50%);
 }
 
 
@@ -75,23 +80,33 @@ body{
     z-index: 2;
 }
 .the-range .tr-timeline{
-    position: absolute;
-    top: 0;
+        position: absolute;
+    top: 60px;
     z-index: 3;
-    width: 15px;
+    width: 12px;
 }
 .the-range .tr-bigbang{
-    position: absolute;
-    bottom: 0;
+   position: absolute;
+    bottom: -69px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 195px;
+    transform: translateX(-50%) scale(0.8);
+    width: 250px;
     z-index: 4;
+    height: 250px;
 }
 .the-range .tr-hubble-icon{
     position: absolute;
-    top: 0;
-    width: 50px;
+    top: 40px;
+    width: 35px;
+    left: 36%;
+    transform: translateX(-36%);
+    z-index: 5;
+    
+}
+.the-range .hubble-grp{
+    position: absolute;
+    top: 40px;
+    width: 35px;
     left: 36%;
     transform: translateX(-36%);
     z-index: 5;
@@ -99,15 +114,23 @@ body{
 }
 .the-range .tr-webb-icon{
     position: absolute;
-    top: 0;
-    width: 95px;
-    left: 63%;
-    transform: translateX(-63%);
+    top: 40px;
+    width: 85px;
+    left: 65%;
+    transform: translateX(-65%);
+    z-index: 5;
+}
+.the-range .webb-grp{
+    position: absolute;
+    top: 40px;
+    width: 85px;
+    left: 65%;
+    transform: translateX(-65%);
     z-index: 5;
 }
 .the-range .tr-hubble-limit{
     position: absolute;
-    top: 70px;
+    top: 90px;
     width: 2px;
     left: 36%;
     transform: translateX(-36%);
@@ -116,7 +139,7 @@ body{
 }
 .the-range .tr-webb-limit{
     position: absolute;
-    top: 70px;
+    top: 90px;
     width: 2px;
     left: 63%;
     transform: translateX(-63%);
@@ -124,44 +147,44 @@ body{
 }
 .the-range .tr-txt-1{
     position: absolute;
-    bottom: 50px;
-    width: 10px;
-    left: 30px;
+    bottom: 0;
+    width: 8px;
+    left: 20px;
     z-index: 5;
 }
 .the-range .tr-txt-2{
     position: absolute;
-    bottom: 275px;
-    width: 10px;
-    left: 30px;
+    bottom: 175px;
+    width: 8px;
+    left: 20px;
     z-index: 5;
 }
 .the-range .tr-txt-3{
     position: absolute;
     top: 100px;
-    width: 10px;
-    left: 30px;
+    width: 8px;
+    left: 20px;
     z-index: 5;
 }
 .the-range .tr-splitarrow{
     position: absolute;
-    top: 392px;
+    top: 360px;
     width: 75px;
     left: 39px;
     z-index: 5;
 }
 .the-range .tr-txt-4{
     position: absolute;
-    top: -19px;
-    width: 120px;
-    left: -4px;
+    top: 21px;
+    width: 100px;
+    left: 0;
     z-index: 5;
 }
 .the-range .levels{
     position: absolute;
-    top: 15px;
+    top: 34px;
     right: 0;
-    width: 35px;
+    width: 30px;
     height: 1087px;
     background-image: url('../assets/imgs/the-range/therange-legend.png');
     z-index: 6;
@@ -208,12 +231,30 @@ body{
     }
 
     #origins {
-        display: flex;
+        /* display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; */
+        position: relative;
+        height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    #origins img, #origins #origins-para1, #origins #origins-para2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    /* #origins img{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    } */
+    #origins #origins-para1, #origins #origins-para2{
+        width: 100%;
     }
 
-    #origins .section-content:first-child{
+    /* #origins .section-content:first-child{
         order: 1;
         
     }
@@ -222,7 +263,7 @@ body{
     }
     #origins img{
         order: 2;
-    }
+    } */
 
 }
 @media (min-width:1024px){
