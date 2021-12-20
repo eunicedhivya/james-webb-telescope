@@ -1,3 +1,8 @@
+document.getElementById('close3D').addEventListener("click", function () {
+    document.getElementById('cover-3d').style.display = "none";
+})
+
+
 document.addEventListener('DOMContentLoaded', function () {
     var controller = new ScrollMagic.Controller();
 
