@@ -1,6 +1,6 @@
-document.getElementById('close3D').addEventListener("click", function () {
-    document.getElementById('cover-3d').style.display = "none";
-})
+// document.getElementById('close3D').addEventListener("click", function () {
+//     document.getElementById('cover-3d').style.display = "none";
+// })
 
 
 var video = document.getElementsByTagName('video')[0];
@@ -31,8 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var timelineOrigin = new TimelineMax();
     timelineOrigin
-        .from('#origins-image', 100, {
+        .from('#origins-image', 500, {
             opacity: 0,
+            ease: Power0.easeOut
+        })
+        .to('#origins-image', 500, {
+            scale: 2,
             ease: Power0.easeOut
         })
         .from('#origins-para1', 500, {
@@ -55,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
             top: "-100vh",
             ease: Power0.easeOut
         })
+
+
 
 
     var scene2 = new ScrollMagic.Scene({
@@ -132,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var scene3 = new ScrollMagic.Scene({
         triggerElement: '#telescope-range',
-        duration: '100%',
+        duration: '200%',
         triggerHook: 0,
     }).setTween(timelineTheRange).setPin("#telescope-range").setClassToggle("#telescope-range", ".active").addTo(controller)
 
@@ -151,35 +157,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var scene4 = new ScrollMagic.Scene({
         triggerElement: '#the-lagrange',
-        duration: '100%',
+        duration: '150%',
         triggerHook: 0,
     }).setTween(timelineTheLegrange).setPin("#the-lagrange").setClassToggle("#the-lagrange", "active").addTo(controller)
 
 
-    // Grab the target video duration
-    videoDuration = video.duration;
-    console.log(video.duration * 1000);
+    // // Grab the target video duration
+    // videoDuration = video.duration;
+    // console.log(video.duration * 1000);
 
-    // Tween the video from beginning to end
-    var videoTween = TweenMax.to(video, 1, {
-        currentTime: videoDuration,
-        ease: Quad.easeOut,
-        overwrite: true,
-        pause: true
-    });
+    // // Tween the video from beginning to end
+    // var videoTween = TweenMax.to(video, 1, {
+    //     currentTime: videoDuration,
+    //     ease: Quad.easeOut,
+    //     overwrite: true,
+    //     pause: true
+    // });
 
-    // Build ScrollMagic Scene
-    var scene5 = new ScrollMagic.Scene({ triggerElement: "#telescope", duration: videoDuration * 1000, offset: 0 })
-        .setTween(videoTween) // Add tween to the scene
-        .addIndicators({ name: "video play" }) // Add indicators to the scrollbar							
-        .setPin("#telescope") // Add indicators to the scrollbar	
-        .setClassToggle("#telescope", "active")
-        .addTo(controller); // Add scene to the controller
+    // // Build ScrollMagic Scene
+    // var scene5 = new ScrollMagic.Scene({ triggerElement: "#telescope", duration: videoDuration * 1000, offset: 0 })
+    //     .setTween(videoTween) // Add tween to the scene
+    //     .addIndicators({ name: "video play" }) // Add indicators to the scrollbar							
+    //     .setPin("#telescope") // Add indicators to the scrollbar	
+    //     .setClassToggle("#telescope", "active")
+    //     .addTo(controller); // Add scene to the controller
 
-    var scene6 = new ScrollMagic.Scene({
-        triggerElement: '#jwst-deployment',
-        duration: '100%',
-        triggerHook: 0,
-    }).setTween().setPin("#jwst-deployment").setClassToggle("#jwst-deployment", "active").addTo(controller)
+    // var scene6 = new ScrollMagic.Scene({
+    //     triggerElement: '#jwst-deployment',
+    //     duration: '100%',
+    //     triggerHook: 0,
+    // }).setTween().setPin("#jwst-deployment").setClassToggle("#jwst-deployment", "active").addTo(controller)
 
 });
