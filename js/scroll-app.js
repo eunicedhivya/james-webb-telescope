@@ -56,67 +56,67 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var timelineTheRange = new TimelineMax();
     timelineTheRange
-        .from('.tr-timeline', 500, {
+        .from('.tr-timeline', 5000, {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('.tr-pointedLight', 500, {
+        .from('.tr-pointedLight', 5000, {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('.tr-gridLine', 500, {
+        .from('.tr-gridLine', 5000, {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('.tr-txt-4', 500, {
+        .from('.tr-txt-4', 5000, {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('.tr-txt-3', 500, {
+        .from('.tr-txt-3', 5000, {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('.tr-txt-2', 500, {
+        .from('.tr-txt-2', 5000, {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('.tr-splitarrow', 500, {
+        .from('.tr-splitarrow', 5000, {
             opacity: 0,
             x: -10,
             ease: Power0.easeOut
         })
-        .from('.tr-txt-1', 500, {
+        .from('.tr-txt-1', 5000, {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('.tr-bigbang', 500, {
+        .from('.tr-bigbang', 5000, {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('.hubble-grp', 500, {
-            opacity: 0,
-            y: -50,
-            ease: Power0.easeOut
-        })
-        .from('.webb-grp', 500, {
+        .from('.hubble-grp', 5000, {
             opacity: 0,
             y: -50,
             ease: Power0.easeOut
         })
-        .from('#range-para1', 15000, {
+        .from('.webb-grp', 5000, {
+            opacity: 0,
+            y: -50,
+            ease: Power0.easeOut
+        })
+        .from('#range-para1', 20000, {
             delay: 0,
             top: "150vh",
             ease: Power0.easeOut
         })
-        .to('#range-para1', 15000, {
+        .to('#range-para1', 20000, {
             top: "-150vh",
             ease: Power0.easeOut
         })
-        .from('#range-para2', 15000, {
+        .from('#range-para2', 20000, {
             top: "150vh",
             ease: Power0.easeOut
         })
-        .to('#range-para2', 15000, {
+        .to('#range-para2', 20000, {
             top: "-150vh",
             ease: Power0.easeOut
         })
