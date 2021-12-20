@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
             x: 0,
             y: -50,
             opacity: 0,
-            delay: 1,
             ease: Power0.easeOut
         })
 
@@ -39,33 +38,30 @@ document.addEventListener('DOMContentLoaded', function () {
             scale: 2,
             ease: Power0.easeOut
         })
-        .from('#origins-para1', 500, {
+        .from('#origins-para1', 1000, {
             y: 20,
             top: "100vh",
             ease: Power0.easeOut
         })
-        .to('#origins-para1', 500, {
+        .to('#origins-para1', 1000, {
             y: -20,
             top: "-100vh",
             ease: Power0.easeOut
         })
-        .from('#origins-para2', 500, {
+        .from('#origins-para2', 1000, {
             y: 20,
             top: "100vh",
             ease: Power0.easeOut
         })
-        .to('#origins-para2', 50, {
+        .to('#origins-para2', 1000, {
             y: -20,
             top: "-100vh",
             ease: Power0.easeOut
         })
-
-
-
 
     var scene2 = new ScrollMagic.Scene({
         triggerElement: '#origins',
-        duration: '100%',
+        duration: '200%',
         triggerHook: 0,
     }).setTween(timelineOrigin).setPin("#origins").addTo(controller)
 
@@ -118,40 +114,65 @@ document.addEventListener('DOMContentLoaded', function () {
             y: -50,
             ease: Power0.easeOut
         })
-        .from('#range-para1', 20000, {
+        .from('#range-para1', 5000, {
             delay: 0,
-            top: "150vh",
+            top: "120vh",
             ease: Power0.easeOut
         })
-        .to('#range-para1', 20000, {
-            top: "-150vh",
+        .to('#range-para1', 10000, {
+            top: "80vh",
             ease: Power0.easeOut
         })
-        .from('#range-para2', 20000, {
-            top: "150vh",
+        .to('#range-para1', 10000, {
+            top: "40vh",
             ease: Power0.easeOut
         })
-        .to('#range-para2', 20000, {
-            top: "-150vh",
+        .to('#range-para1', 10000, {
+            top: "-120vh",
+            ease: Power0.easeOut
+        })
+        .from('#range-para2', 10000, {
+            delay: 0,
+            top: "120vh",
+            ease: Power0.easeOut
+        })
+        .to('#range-para2', 10000, {
+            top: "80vh",
+            ease: Power0.easeOut
+        })
+        .to('#range-para2', 10000, {
+            top: "40vh",
+            ease: Power0.easeOut
+        })
+        .to('#range-para2', 10000, {
+            top: "-120vh",
             ease: Power0.easeOut
         })
 
     var scene3 = new ScrollMagic.Scene({
         triggerElement: '#telescope-range',
-        duration: '200%',
+        duration: '500%',
         triggerHook: 0,
     }).setTween(timelineTheRange).setPin("#telescope-range").setClassToggle("#telescope-range", ".active").addTo(controller)
 
 
     var timelineTheLegrange = new TimelineMax();
     timelineTheLegrange
-        .from('#lagrange-para1', 15000, {
-            delay: 0,
-            top: "150vh",
+        .from('#lagrange-para1', 10000, {
+            delay: 1,
+            top: "120vh",
             ease: Power0.easeOut
         })
-        .to('#lagrange-para1', 15000, {
-            top: "-150vh",
+        .to('#lagrange-para1', 10000, {
+            top: "80vh",
+            ease: Power0.easeOut
+        })
+        .to('#lagrange-para1', 10000, {
+            top: "20vh",
+            ease: Power0.easeOut
+        })
+        .to('#lagrange-para1', 10000, {
+            top: "-120vh",
             ease: Power0.easeOut
         })
 

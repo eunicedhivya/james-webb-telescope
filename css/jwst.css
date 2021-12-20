@@ -296,9 +296,7 @@ body{
         top: 150vh;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-        width: 50%;
         z-index: 3;
-        width: 100%;
     }
 
     #jwst-3d {
@@ -357,8 +355,8 @@ video{
         bottom: 12%;
     }
 
-    #range-para1, #range-para2{
-        width: 100%;
+    #range-para1, #range-para2, #lagrange-para1{
+        width: 80%;
     }
 
     .section-content{
