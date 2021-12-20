@@ -176,7 +176,10 @@ document.addEventListener('DOMContentLoaded', function () {
         .setClassToggle("#telescope", "active")
         .addTo(controller); // Add scene to the controller
 
-    // var scene5 =  new ScrollMagic.Scene({ triggerElement: "#the-lagrange", duration: videoDuration * 1000, offset: 0 })
-    //     .setTween(videoTween).setPin("#telescope").setClassToggle("#telescope", "active").addTo(controller)
+    var scene6 = new ScrollMagic.Scene({
+        triggerElement: '#jwst-deployment',
+        duration: '100%',
+        triggerHook: 0,
+    }).setTween().setPin("#jwst-deployment").setClassToggle("#jwst-deployment", "active").addTo(controller)
 
 });

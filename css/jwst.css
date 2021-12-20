@@ -242,9 +242,9 @@ body{
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
     }
-    #origins #origins-para1, #origins #origins-para2{
+    /* #origins #origins-para1, #origins #origins-para2{
         width: 100%;
-    }
+    } */
 
     #telescope-range{
         height: 100vh;
@@ -300,6 +300,11 @@ body{
         width: 100%;
     }
 
+    #jwst-3d {
+        height: 100vh;
+        margin-bottom: 20px;
+    }
+
 .interactive-3d { position: relative;}
 
 .cover-3d{
@@ -321,9 +326,6 @@ body{
     position: relative;
 }
 
-#telescope{
-    /* height: 100vh; */
-}
 
 video{
     position: absolute;
@@ -331,6 +333,14 @@ video{
     /* height: 200%; */
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#jwst-deployment .section-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
     transform: translate(-50%, -50%);
 }
 
@@ -348,6 +358,10 @@ video{
 
     #range-para1, #range-para2{
         width: 100%;
+    }
+
+    .section-content{
+        width: 80%;
     }
 
 }
