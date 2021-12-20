@@ -27,6 +27,7 @@ body{
     padding: 20px;
     margin-bottom: 20px;
     background-color: #000;
+    opacity: 0.85;
 }
 .tv9-interactive p{
     color: #FFF;
