@@ -127,4 +127,23 @@ document.addEventListener('DOMContentLoaded', function () {
         triggerHook: 0,
     }).setTween(timelineTheRange).setPin("#telescope-range").setClassToggle("#telescope-range", ".active").addTo(controller)
 
+
+    var timelineTheLegrange = new TimelineMax();
+    timelineTheLegrange
+        .from('#lagrange-para1', 15000, {
+            delay: 0,
+            top: "150vh",
+            ease: Power0.easeOut
+        })
+        .to('#lagrange-para1', 15000, {
+            top: "-150vh",
+            ease: Power0.easeOut
+        })
+
+    var scene4 = new ScrollMagic.Scene({
+        triggerElement: '#the-lagrange',
+        duration: '100%',
+        triggerHook: 0,
+    }).setTween(timelineTheLegrange).setPin("#the-lagrange").setClassToggle("#the-lagrange", "active").addTo(controller)
+
 });
