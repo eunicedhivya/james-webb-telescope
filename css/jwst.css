@@ -317,6 +317,22 @@ body{
     text-align: center;
 }
 
+#jwst-deployment{
+    position: relative;
+}
+
+#telescope{
+    /* height: 100vh; */
+}
+
+video{
+    position: absolute;
+    width: 200%;
+    /* height: 200%; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 @media (max-width:767px){
     #intro h1, #intro p{

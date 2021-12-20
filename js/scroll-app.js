@@ -3,6 +3,10 @@ document.getElementById('close3D').addEventListener("click", function () {
 })
 
 
+var video = document.getElementsByTagName('video')[0];
+var videoDuration;
+
+
 document.addEventListener('DOMContentLoaded', function () {
     var controller = new ScrollMagic.Controller();
 
@@ -150,5 +154,29 @@ document.addEventListener('DOMContentLoaded', function () {
         duration: '100%',
         triggerHook: 0,
     }).setTween(timelineTheLegrange).setPin("#the-lagrange").setClassToggle("#the-lagrange", "active").addTo(controller)
+
+
+    // Grab the target video duration
+    videoDuration = video.duration;
+    console.log(video.duration * 1000);
+
+    // Tween the video from beginning to end
+    var videoTween = TweenMax.to(video, 1, {
+        currentTime: videoDuration,
+        ease: Quad.easeOut,
+        overwrite: true,
+        pause: true
+    });
+
+    // Build ScrollMagic Scene
+    var scene5 = new ScrollMagic.Scene({ triggerElement: "#telescope", duration: videoDuration * 1000, offset: 0 })
+        .setTween(videoTween) // Add tween to the scene
+        .addIndicators({ name: "video play" }) // Add indicators to the scrollbar							
+        .setPin("#telescope") // Add indicators to the scrollbar	
+        .setClassToggle("#telescope", "active")
+        .addTo(controller); // Add scene to the controller
+
+    // var scene5 =  new ScrollMagic.Scene({ triggerElement: "#the-lagrange", duration: videoDuration * 1000, offset: 0 })
+    //     .setTween(videoTween).setPin("#telescope").setClassToggle("#telescope", "active").addTo(controller)
 
 });
