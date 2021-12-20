@@ -220,53 +220,95 @@ body{
 
 
 #origins {
-        /* display: flex;
-        flex-direction: column;
-        align-items: center; */
-        position: relative;
-        height: 100vh;
-        padding: 10px;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-    #origins img, #origins #origins-para1, #origins #origins-para2{
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-    }
-    #origins img{
-        position: absolute;
-        top:50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-    }
-    #origins #origins-para1, #origins #origins-para2{
-        width: 100%;
-    }
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    position: relative;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#origins img, #origins #origins-para1, #origins #origins-para2{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+#origins img{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+#origins #origins-para1, #origins #origins-para2{
+    width: 100%;
+}
 
-    #telescope-range{
-        height: 100vh;
-        position: relative;
-        overflow: hidden;
-    }
+#telescope-range{
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
 
-    #range-para1, #range-para2{
-        position: absolute;
-        top: 100vh;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        width: 50%;
-        z-index: 10;
-    }
-    /* #range-para1, #range-para2{
-        position: absolute;
-        top: 150vh;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        width: 50%;
-        z-index: 10;
-    } */
+#range-para1, #range-para2{
+    position: absolute;
+    top: 100vh;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50%;
+    z-index: 10;
+}
+/* #range-para1, #range-para2{
+    position: absolute;
+    top: 150vh;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 50%;
+    z-index: 10;
+} */
+
+
+/* Comparison section */
+#comparision {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+#comparision .col img {
+    max-width: 480px;
+}
+#comparision ul li {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #919191;
+    padding: 7px 0;
+}
+#comparision ul li.active {
+    color: #ffd664;
+}
+#comparision h2, #comparision h3 {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+}
+#comparision h2 {
+    text-transform: uppercase;
+}
+#comparision h3 {
+    margin-bottom: 15px;
+}
+#comparision h3:last-child {
+    padding: 16px;
+    border: 0.5px solid #fff;
+    margin-top: 34px;
+}
 
 
 
@@ -284,6 +326,15 @@ body{
 
     #range-para1, #range-para2{
         width: 100%;
+    }
+    #comparision {
+        flex-direction: column;
+    }
+    #comparision .col:first-child {
+        order: 1;
+    }
+    #comparision .col:last-child {
+        order: 2;
     }
 
 }

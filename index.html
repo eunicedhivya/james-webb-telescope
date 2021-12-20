@@ -152,10 +152,15 @@
         </section>
         <section id="comparision">
             <div class="col">
+                <h3>Hubble space telescope</h3>
+                <img src="assets/imgs/hubble.png" alt="">
+                <h3 class="hubbleDesc">Test</h3>
+            </div>
+            <div class="col">
                 <h2>Comparison</h2>
-                <ul>
-                    <li>Launch date</li>
-                    <li>Launch mass</li>
+                <ul id="comparisonList">
+                    <li data-id="0">Launch date</li>
+                    <li data-id="1">Launch mass</li>
                     <li>Dimensions</li>
                     <li>Mirror diametre</li>
                     <li>Mirror segments</li>
@@ -170,12 +175,9 @@
                 </ul>
             </div>
             <div class="col">
-                <h3>Hubble space telescope</h3>
-                <img src="assets/imgs/hubble.png" alt="">
-            </div>
-            <div class="col">
                 <h3>James Webb Space Telescope</h3>
                 <img src="assets/imgs/jwst.png" alt="">
+                <h3 class="jamesDesc">Test</h3>
             </div>
         </section>
     </div>
@@ -192,7 +194,16 @@
     <script src="js/scroll-app.js"></script>
 
 
-
+    <script>
+        var compDesc = [{"hubbleDesc":"Test1", "jamesDesc":"Test2"},{"hubbleDesc":"Test3", "jamesDesc":"Test4"}];
+        $("#comparisonList li").on("click", function(){
+            $("#comparisonList li").removeClass("active");
+            $(this).addClass("active");
+            var val = $(this).attr("data-id");
+            console.log(val);
+            $(".hubbleDesc").text(compDesc[val]["hubbleDesc"])
+            $(".jamesDesc").text(compDesc[val]["jamesDesc"])
+        })
     </script>
 </body>
 
