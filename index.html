@@ -156,23 +156,25 @@
                 <img src="assets/imgs/hubble.png" alt="">
                 <h3 class="hubbleDesc">Test</h3>
             </div>
-            <div class="col">
+            <div class="col compCol">
                 <h2>Comparison</h2>
                 <ul id="comparisonList">
-                    <li data-id="0">Launch date</li>
+                    <li class="active" data-id="0">Launch date</li>
                     <li data-id="1">Launch mass</li>
-                    <li>Dimensions</li>
-                    <li>Mirror diametre</li>
-                    <li>Mirror segments</li>
-                    <li>Sunshield </li>
-                    <li>Sunshield layers</li>
-                    <li>Instrument type</li>
-                    <li>Wavelengths</li>
-                    <li>Power</li>
-                    <li>Regime</li>
-                    <li>Distance</li>
-                    <li>Range</li>
+                    <li data-id="2">Dimensions</li>
+                    <li data-id="3">Mirror diametre</li>
+                    <li data-id="4">Mirror segments</li>
+                    <li data-id="5">Sunshield </li>
+                    <li data-id="6">Sunshield layers</li>
+                    <li data-id="7">Instrument type</li>
+                    <li data-id="8">Wavelengths</li>
+                    <li data-id="9">Power</li>
+                    <li data-id="10">Regime</li>
+                    <li data-id="11">Distance</li>
+                    <li data-id="12">Range</li>
                 </ul>
+                <div id="next"> &gt; </div>
+                <div id="prev"> &lt; </div>
             </div>
             <div class="col">
                 <h3>James Webb Space Telescope</h3>
@@ -200,10 +202,34 @@
             $("#comparisonList li").removeClass("active");
             $(this).addClass("active");
             var val = $(this).attr("data-id");
-            console.log(val);
+            // console.log(val);
             $(".hubbleDesc").text(compDesc[val]["hubbleDesc"])
             $(".jamesDesc").text(compDesc[val]["jamesDesc"])
         })
+
+        var dev = window.matchMedia("(max-width:767px)")
+        if(dev.matches) {
+            // console.log("mob");
+                var current = $(".active");
+                var crntId = current.attr("data-id");
+            $("#next").on("click", function(){
+                var count = 1;
+                // var left = 47%;
+                crntId= parseInt(crntId)+1;
+                $("#comparisonList li[data-id="+crntId+"]").click();
+                var position = $("#comparisonList li[data-id="+crntId+"]").position();
+                console.log(crntId, position.left);
+                if(crntId) {
+                    $("#comparisonList").css('transform', 'translateX('+ position.left * (1/2) +'px)');
+                }
+                count+=1;
+            })
+            $("#prev").on("click", function(){
+                crntId= parseInt(crntId)-1;
+                $("#comparisonList li[data-id="+crntId+"]").click();
+                // console.log(crntId)
+            })
+        }
     </script>
 </body>
 

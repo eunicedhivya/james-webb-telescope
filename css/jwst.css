@@ -330,13 +330,36 @@ body{
     #comparision {
         flex-direction: column;
     }
+    #comparisonList {
+        display: flex;
+        position: relative;
+        transform: translateX(691px);
+    }
+    #comparision ul li {
+        padding: 7px 15px;
+        transition: 1s ease-in-out;
+    }
+    .compCol {
+        position: relative;
+    }
+    #prev {
+        position: absolute;
+        left: 46%;
+        top: 58%;
+        font-size: 20px;
+    }
+    #next {
+        position: absolute;
+        right: 45%;
+        top: 58%;
+        font-size: 20px;
+    }
     #comparision .col:first-child {
         order: 1;
     }
     #comparision .col:last-child {
         order: 2;
     }
-
 }
 @media (min-width:1024px){
     #intro h1, #intro p{
