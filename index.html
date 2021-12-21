@@ -107,18 +107,25 @@
             <div class="img-orbit"></div>
 
         </section>
-        <!-- <section id="jwst-3d">
+        <section id="jwst-3d">
             <div class="interactive-3d">
                 <div class="cover-3d" id="cover-3d">
                     <h2>JWST 3D Interactive</h2>
                     <p> Click here to start the experience</p>
-                    <button class="close3D" id="close3D">start</button>
+                    <button class="close3D" id="enable3dwindow">start</button>
                 </div>
-                <iframe frameBorder="0" style="width: 100%; height: 100%; overflow: hidden;"
-                    src="https://www.eunicedhivya.com/james-webb-telescope/atlas-3d.html" width="100" height="100"
-                    scrolling="no">Iframes not supported</iframe>
+                <button id="disable3dwindow">close</button>
+                <div class="model" id="model">
+                    <iframe frameBorder="0" style="width: 100%; height: 100%; overflow: hidden;"
+                        src="https://www.eunicedhivya.com/james-webb-telescope/atlas-3d.html" width="100" height="100"
+                        scrolling="no">Iframes not supported</iframe>
+                </div>
             </div>
         </section>
+        <section id="telescope">
+            <img id="myimg" src="assets/imgs/image-seq/ramped/ezgif-frame-114.jpg">
+        </section>
+        <!-- 
         <section id="telescope">
             <video preload="auto" width="100%">
                 <source src="assets/video/ramped.mp4" type="video/mp4">

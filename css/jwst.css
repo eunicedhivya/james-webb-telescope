@@ -207,18 +207,6 @@ body{
     height:500px;
 }
 
-.interactive-3d{
-    height: 500px;
-    border: 1px solid #000;
-}
-.interactive-3d iframe{
-    border: 1px solid #000;
-}
-
-.jwst-3d{
-    width: 1000px;
-    height: 500px;
-}
 
 
 #origins {
@@ -299,9 +287,43 @@ body{
         z-index: 3;
     }
 
+    .interactive-3d{
+    height: 100%;
+    border: 1px solid #000;
+}
+.interactive-3d iframe{
+    border: 1px solid #000;
+}
+
+.model {
+    position: absolute;
+    top: 0;
+    left: -23px;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+}
+
+.model.active{
+    transform: scale(1.1);
+    left: 0px;
+    top: 35px;
+}
+
+#disable3dwindow {
+        position: absolute;
+    left: 40px;
+    /* bottom: 40px; */
+    top: 40px;
+    width: 100px;
+    height: 40px;
+    z-index: 100;
+}
+
     #jwst-3d {
         height: 100vh;
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
+        padding: 0;
     }
 
 .interactive-3d { position: relative;}
@@ -312,13 +334,14 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: blue;
     opacity: 0.8;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 35px;
     text-align: center;
+    z-index: 10;
 }
 
 #jwst-deployment{
@@ -362,6 +385,11 @@ video{
     .section-content{
         width: 80%;
     }
+
+     #jwst-3d {
+    margin-top: -50%;
+    margin-bottom: 50%;
+}
 
 }
 @media (min-width:1024px){

@@ -117,12 +117,12 @@ function init() {
     var controls = new THREE.OrbitControls(camera);
     controls.enableDamping = true;
 
-    if ($(window).width() < 756) {
-        controls.enableZoom = false;
-    }
-    else {
-        controls.enableZoom = true;
-    }
+    // if ($(window).width() < 756) {
+    //     controls.enableZoom = false;
+    // }
+    // else {
+    //     controls.enableZoom = true;
+    // }
 
     function zoomModel(isZoomOut, scale) {
         if (isZoomOut) {
