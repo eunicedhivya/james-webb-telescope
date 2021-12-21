@@ -13,6 +13,18 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/jwst.css">
+    <style>
+        .telescope-steps {
+            border: 1px solid #fff;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .5s;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
 </head>
 
 <body>
@@ -124,6 +136,76 @@
         </section>
         <section id="telescope">
             <img id="myimg" src="assets/imgs/image-seq/ramped/ezgif-frame-114.jpg">
+            <div id="step1" class="telescope-steps" style="opacity: 0;">
+                <p>Launch+ 31 mins – Solar Array Deployment</p>
+            </div>
+            <div id="step2" class="telescope-steps" style="opacity: 0;">
+                <p>Launch+ 2hrs – High Gain Antenna Deployment</p>
+            </div>
+            <div id="step3" class="telescope-steps" style="opacity: 0;">
+                <p>+ 3 days – Sunshield Pallet Deployments</p>
+            </div>
+            <div id="step4" class="telescope-steps" style="opacity: 0;">
+                <p>+4 days – Deployable tower assembly</p>
+            </div>
+            <div id="step4" class="telescope-steps" style="opacity: 0;">
+                <p>+5 days – Momentum flap deployment</p>
+            </div>
+            <div id="step4" class="telescope-steps" style="opacity: 0;">
+                <p>+ 5 days – Sunshield Membrane cover Release</p>
+            </div>
+            <div id="step4" class="telescope-steps" style="opacity: 0;">
+                <p>+ 6 days – Sunshield midboom deployment</p>
+            </div>
+            <div id="step4" class="telescope-steps" style="opacity: 0;">
+                <p>+7 days – Sunshield membrane tensioning</p>
+            </div>
+            <div id="step4" class="telescope-steps" style="opacity: 0;">
+                <p>+10 days – Secondary Mirror support structure</p>
+            </div>
+            <div id="step4" class="telescope-steps" style="opacity: 0;">
+                <p>+11 days- AFT deployable radiator</p>
+            </div>
+            <div id="step4" class="telescope-steps" style="opacity: 0;">
+                <p>+ 12 days – Primary mirror wing deployment</p>
+            </div>
+            <div id="step4" class="telescope-steps" style="opacity: 0;">
+                <p>+ 13 days – Primary mirror wing deployment</p>
+            </div>
+            <div id="step4" class="telescope-steps" style="opacity: 0;">
+                <p>+29 days – Orbital injection burn</p>
+            </div>
+        </section>
+        <section id="ariane">
+            <div class="ariane-rocket">
+                <!-- <img src="assets/imgs/faring-right.png" alt="">
+                <img src="assets/imgs/faring-left.png" alt="">
+                <img src="assets/imgs/rocket-body.png" alt=""> -->
+                <svg viewBox="0 0 963 3540">
+                    <g id="rocket-body">
+
+                        <image style="overflow:visible;enable-background:new    ;" width="963" height="2318"
+                            id="Layer_8_copy_xA0_Image" xlink:href="assets/imgs/rocket-body.png"
+                            transform="matrix(1 0 0 1 0 1222)">
+                        </image>
+                    </g>
+                    <g id="fairing-left">
+
+                        <image style="overflow:visible;enable-background:new    ;" width="201" height="1241"
+                            id="Fairing_right_xA0_Image" xlink:href="assets/imgs/faring-left.png"
+                            transform="matrix(1 0 0 1 482 0)">
+                        </image>
+                    </g>
+                    <g id="fairing-right">
+
+                        <image style="overflow:visible;enable-background:new    ;" width="206" height="1245"
+                            id="Fairing_left_xA0_Image" xlink:href="assets/imgs/faring-right.png"
+                            transform="matrix(1 0 0 1 276 0)">
+                        </image>
+                    </g>
+                </svg>
+
+            </div>
         </section>
         <!-- 
         <section id="telescope">

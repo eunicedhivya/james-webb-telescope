@@ -366,6 +366,19 @@ video{
     transform: translate(-50%, -50%);
 }
 
+#ariane{
+    position: relative;
+}
+.ariane-rocket {
+    text-align: center;
+}
+#ariane svg{ 
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+
 @media (max-width:767px){
     #intro h1, #intro p{
         position: absolute;
@@ -393,6 +406,10 @@ video{
 
 }
 @media (min-width:1024px){
+    #ariane svg{ 
+    width: 10%;
+    margin: 0 auto;
+}
     #intro h1, #intro p{
         width: 100%;
         max-width: 500px;
