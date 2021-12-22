@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var timelineIntro = new TimelineMax();
 
     timelineIntro
-        .from('.main-desc', 2, {
+        .from('.main-desc', 1, {
             x: 0,
             y: -50,
             opacity: 0,
@@ -277,65 +277,65 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var timelineOrigin = new TimelineMax();
     timelineOrigin
-        .from('#origins-image', 500, {
+        .from('#origins-image', 4, {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 500, {
+        .to('#shine-effect', 4, {
             opacity: 1,
             right: "50%",
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 500, {
+        .to('#shine-effect', 4, {
             opacity: 0,
             right: "-92%",
             ease: Power0.easeOut
         })
-        .to('#origins-image', 500, {
+        .to('#origins-image', 4, {
             scale: 2,
             ease: Power0.easeOut
         })
-        .from('#origins-para1', 1000, {
+        .from('#origins-para1', 8, {
             y: 20,
             top: "100vh",
             ease: Power0.easeOut
         })
-        .to('#origins-para1', 1000, {
+        .to('#origins-para1', 8, {
             y: -20,
             top: "-100vh",
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 500, {
+        .to('#shine-effect', 4, {
             opacity: 1,
             right: "50%",
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 500, {
+        .to('#shine-effect', 4, {
             opacity: 0,
             right: "168%",
             ease: Power0.easeOut
         })
-        .from('#origins-para2', 1000, {
+        .from('#origins-para2', 4, {
             y: 20,
             top: "100vh",
             ease: Power0.easeOut
         })
-        .to('#origins-para2', 1000, {
+        .to('#origins-para2', 8, {
             y: -20,
             top: "-100vh",
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 500, {
+        .to('#shine-effect', 4, {
             opacity: 1,
             right: "50%",
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 500, {
+        .to('#shine-effect', 4, {
             opacity: 0,
             right: "-92%",
             ease: Power0.easeOut
         })
-        .to('#origins-image', 500, {
+        .to('#origins-image', 4, {
             scale: 0.7,
             opacity: 0,
             ease: Power0.easeOut
@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var scene2 = new ScrollMagic.Scene({
         triggerElement: '#origins',
-        duration: '200%',
+        duration: 1000,
         triggerHook: 0,
     }).setTween(timelineOrigin).setPin("#origins").addTo(controller)
 
