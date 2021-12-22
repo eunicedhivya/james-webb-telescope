@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var scene2 = new ScrollMagic.Scene({
         triggerElement: '#origins',
-        duration: 1000,
+        duration: 10000,
         triggerHook: 0,
     }).setTween(timelineOrigin).setPin("#origins").addTo(controller)
 
