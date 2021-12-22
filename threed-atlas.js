@@ -251,16 +251,27 @@ function init() {
     // );
     // scene.add(Boxmesh);
 
-    var spritey = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    spritey.position.set(0, 200, 170);
+    // var spritey = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    // spritey.position.set(0, 200, 170);
+    // scene.add(spritey);
+    var geometry = new THREE.SphereGeometry(10, 32, 32); // (radius, widthSegments, heightSegments)
+    var material = new THREE.MeshBasicMaterial( {color: 0xff0000} );
+    var spritey = new THREE.Mesh(geometry, material);
+    spritey.position.set(0, 170, 80);
     scene.add(spritey);
 
-    var spritey2 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    spritey2.position.set(-80, 80, 220);
+    // var spritey2 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    // spritey2.position.set(-80, 80, 220);
+    // scene.add(spritey2);
+    var spritey2 = new THREE.Mesh(geometry, material);
+    spritey2.position.set(20, 80, 100);
     scene.add(spritey2);
     
-    var spritey3 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    spritey3.position.set(-50, 120, 280);
+    // var spritey3 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    // spritey3.position.set(-50, 120, 280);
+    // scene.add(spritey3);
+    var spritey3 = new THREE.Mesh(geometry, material);
+    spritey3.position.set(40, 150, 120);
     scene.add(spritey3);
 
     var spritey4 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
