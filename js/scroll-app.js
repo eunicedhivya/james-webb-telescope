@@ -281,12 +281,12 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 4, {
+        .to('#shine-effect', 2, {
             opacity: 1,
             right: "50%",
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 4, {
+        .to('#shine-effect', 2, {
             opacity: 0,
             right: "-92%",
             ease: Power0.easeOut
@@ -305,12 +305,12 @@ document.addEventListener('DOMContentLoaded', function () {
             top: "-100vh",
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 4, {
+        .to('#shine-effect', 2, {
             opacity: 1,
             right: "50%",
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 4, {
+        .to('#shine-effect', 2, {
             opacity: 0,
             right: "168%",
             ease: Power0.easeOut
@@ -325,12 +325,12 @@ document.addEventListener('DOMContentLoaded', function () {
             top: "-100vh",
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 4, {
+        .to('#shine-effect', 2, {
             opacity: 1,
             right: "50%",
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 4, {
+        .to('#shine-effect', 2, {
             opacity: 0,
             right: "-92%",
             ease: Power0.easeOut
