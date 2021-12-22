@@ -408,10 +408,6 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .to('.the-range', 5000, {
-            opacity: 0,
-            ease: Power0.easeOut
-        })
         .from('#range-para1', 5000, {
             delay: 0,
             top: "120vh",
@@ -447,6 +443,10 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .to('#range-para2', 10000, {
             top: "-120vh",
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .to('.the-range', 5000, {
             opacity: 0,
             ease: Power0.easeOut
         })

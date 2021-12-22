@@ -56,6 +56,17 @@ body{
     text-shadow: 0px 0px 0px rgba(0,0,0,0.66);
 }
 
+.tint {
+    background: rgb(0,0,0);
+background: linear-gradient(-180deg, rgba(0,0,0,0.11294940339417014) 35%, rgba(0,0,0,0.9448821765034139) 100%);
+    width: 115%;
+    height: 100%;
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    z-index: -1;
+}
+
 
 #shine-effect {
   
