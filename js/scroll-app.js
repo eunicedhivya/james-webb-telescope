@@ -519,56 +519,66 @@ document.addEventListener('DOMContentLoaded', function () {
         .setClassToggle("#telescope", "active")
         .on("update", function (e) {
             // console.log("start")
+            // console.log("start")
             // console.log(controller.info("scrollDirection"));
-            console.log(e.scrollPos);
-            if (controller.info("scrollDirection") === "FORWARD") {
-                if (e.scrollPos > 12400 && e.scrollPos < 13946) {
-                    $("#step1").css("opacity", 1)
-                } else if (e.scrollPos > 13946 && e.scrollPos < 14700) {
-                    $("#step1").css("opacity", 0)
-                    $("#step2").css("opacity", 1)
-                } else if (e.scrollPos > 15000 && e.scrollPos < 18114) {
-                    $("#step2").css("opacity", 0)
-                    $("#step3").css("opacity", 1)
-                } else if (e.scrollPos > 18114 && e.scrollPos < 19380) {
-                    $("#step3").css("opacity", 0)
-                    $("#step4").css("opacity", 1)
-                } else if (e.scrollPos > 19380 && e.scrollPos < 20500) {
-                    $("#step4").css("opacity", 0)
-                    $("#step5").css("opacity", 1)
-                } else if (e.scrollPos > 20550 && e.scrollPos < 22064) {
-                    $("#step5").css("opacity", 0)
-                    $("#step6").css("opacity", 1)
-                } else if (e.scrollPos > 22700 && e.scrollPos < 28294) {
-                    $("#step6").css("opacity", 0)
-                    $("#step7").css("opacity", 1)
-                } else if (e.scrollPos > 28300 && e.scrollPos < 29541) {
-                    $("#step7").css("opacity", 0)
-                    $("#step8").css("opacity", 1)
-                } else if (e.scrollPos > 30020 && e.scrollPos < 31500) {
-                    $("#step8").css("opacity", 0)
-                    $("#step9").css("opacity", 1)
-                } else if (e.scrollPos > 33145 && e.scrollPos < 34445) {
-                    $("#step9").css("opacity", 0)
-                    $("#step10").css("opacity", 1)
-                } else if (e.scrollPos > 34445 && e.scrollPos < 35406) {
-                    $("#step10").css("opacity", 0)
-                    $("#step11").css("opacity", 1)
-                } else if (e.scrollPos > 34247 && e.scrollPos < 35578) {
-                    $("#step11").css("opacity", 0)
-                    $("#step12").css("opacity", 1)
-                } else if (e.scrollPos > 34247 && e.scrollPos < 35578) {
-                    $("#step11").css("opacity", 0)
-                    $("#step12").css("opacity", 1)
-                }
+            if ($(window).width() >= 1024) {
+                // Desktop
             } else {
-                // if (e.scrollPos > 7874 && e.scrollPos < 10000) {
-                //     $("#step1").css("opacity", 0)
-                // } else if (e.scrollPos > 10500 && e.scrollPos < 15000) {
-                //     $("#step2").css("opacity", 0)
-                // }
-                $(".telescope-steps").css("opacity", 0)
+
+                // Mobile & Tablet
+                if (controller.info("scrollDirection") === "FORWARD") {
+                    if (e.scrollPos > 12400 && e.scrollPos < 13946) {
+                        $("#step1").css("opacity", 1)
+                    } else if (e.scrollPos > 13946 && e.scrollPos < 14700) {
+                        $("#step1").css("opacity", 0)
+                        $("#step2").css("opacity", 1)
+                    } else if (e.scrollPos > 15000 && e.scrollPos < 18114) {
+                        $("#step2").css("opacity", 0)
+                        $("#step3").css("opacity", 1)
+                    } else if (e.scrollPos > 18114 && e.scrollPos < 19380) {
+                        $("#step3").css("opacity", 0)
+                        $("#step4").css("opacity", 1)
+                    } else if (e.scrollPos > 19380 && e.scrollPos < 20500) {
+                        $("#step4").css("opacity", 0)
+                        $("#step5").css("opacity", 1)
+                    } else if (e.scrollPos > 20550 && e.scrollPos < 22064) {
+                        $("#step5").css("opacity", 0)
+                        $("#step6").css("opacity", 1)
+                    } else if (e.scrollPos > 22700 && e.scrollPos < 28294) {
+                        $("#step6").css("opacity", 0)
+                        $("#step7").css("opacity", 1)
+                    } else if (e.scrollPos > 28300 && e.scrollPos < 29541) {
+                        $("#step7").css("opacity", 0)
+                        $("#step8").css("opacity", 1)
+                    } else if (e.scrollPos > 30020 && e.scrollPos < 31500) {
+                        $("#step8").css("opacity", 0)
+                        $("#step9").css("opacity", 1)
+                    } else if (e.scrollPos > 33145 && e.scrollPos < 34445) {
+                        $("#step9").css("opacity", 0)
+                        $("#step10").css("opacity", 1)
+                    } else if (e.scrollPos > 34445 && e.scrollPos < 35406) {
+                        $("#step10").css("opacity", 0)
+                        $("#step11").css("opacity", 1)
+                    } else if (e.scrollPos > 34247 && e.scrollPos < 35578) {
+                        $("#step11").css("opacity", 0)
+                        $("#step12").css("opacity", 1)
+                    } else if (e.scrollPos > 34247 && e.scrollPos < 35578) {
+                        $("#step11").css("opacity", 0)
+                        $("#step12").css("opacity", 1)
+                    }
+                } else {
+                    // if (e.scrollPos > 7874 && e.scrollPos < 10000) {
+                    //     $("#step1").css("opacity", 0)
+                    // } else if (e.scrollPos > 10500 && e.scrollPos < 15000) {
+                    //     $("#step2").css("opacity", 0)
+                    // }
+                    $(".telescope-steps").css("opacity", 0)
+                }
+
             }
+            console.log(e.startPos);
+            console.log(e.scrollPos);
+
         })
         .setPin("#telescope")
         .addIndicators() // add indicators (requires plugin)
