@@ -301,6 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ease: Power0.easeOut
         })
         .to('#origins-image', 500, {
+            // scale: 0.7,
             opacity: 0,
             ease: Power0.easeOut
         })
@@ -619,6 +620,14 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity: 0,
             ease: Power0.easeOut
         })
+        .to('#ariane-svg', 0.2, {
+            opacity: 0,
+            ease: Power0.easeOut
+        }, "two")
+        .to('#myimg2', 0.2, {
+            opacity: 0,
+            ease: Power0.easeOut
+        }, "two")
 
     var scene6 = new ScrollMagic.Scene({ triggerElement: "#ariane", duration: 20000, triggerHook: 0 })
         .setTween(timelineRocket)
