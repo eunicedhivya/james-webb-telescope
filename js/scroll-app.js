@@ -484,7 +484,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var scene4 = new ScrollMagic.Scene({
         triggerElement: '#the-lagrange',
-        duration: '200%',
+        duration: '500%',
         triggerHook: 0,
     }).setTween(timelineTheLegrange).setPin("#the-lagrange").setClassToggle("#the-lagrange", "active").addTo(controller)
 
