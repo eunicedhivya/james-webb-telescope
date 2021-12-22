@@ -550,7 +550,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ease: Power0.easeOut
         }, "one")
         .from('#ariane-svg', 0.5, {
-            y: 500,
+            y: 0,
             opacity: 0,
             ease: Power0.easeOut
         }, "one")

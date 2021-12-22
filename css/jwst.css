@@ -377,12 +377,12 @@ video{
     text-align: center;
 }
 #ariane svg{ 
-    width: 40%;
+    width: 76%;
     margin: 60px auto;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -50%);
 }
 
 
@@ -451,13 +451,14 @@ video{
         top: 180%;
     }
 
-    /* #backtorocket {
-        width: 80%;
-    } */
-
-    /* #ariane{
-        height: 100vh;
-    } */
+    #ariane svg{ 
+        width: 76%;
+        margin: 60px auto;
+        position: absolute;
+        top: 550%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
 }
 @media (min-width:1024px){
