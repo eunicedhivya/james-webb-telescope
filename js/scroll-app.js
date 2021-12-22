@@ -300,6 +300,10 @@ document.addEventListener('DOMContentLoaded', function () {
             top: "-100vh",
             ease: Power0.easeOut
         })
+        .to('#origins-image', 500, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
 
     var scene2 = new ScrollMagic.Scene({
         triggerElement: '#origins',
@@ -309,6 +313,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var timelineTheRange = new TimelineMax();
     timelineTheRange
+        .from('.levels', 5000, {
+            y: 100,
+            opacity: 0,
+            ease: Power0.easeOut
+        })
         .from('.tr-timeline', 5000, {
             opacity: 0,
             ease: Power0.easeOut
