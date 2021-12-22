@@ -58,7 +58,7 @@ body{
 
 .tint {
     background: rgb(0,0,0);
-background: linear-gradient(-180deg, rgba(0,0,0,0.11294940339417014) 35%, rgba(0,0,0,0.9448821765034139) 100%);
+background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.9252743333661589) 100%);
     width: 115%;
     height: 100%;
     position: absolute;
