@@ -245,8 +245,8 @@ var images = [
 ];
 
 
-var video = document.getElementsByTagName('video')[0];
-var videoDuration;
+// var video = document.getElementsByTagName('video')[0];
+// var videoDuration;
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -261,12 +261,17 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity: 0,
             ease: Power0.easeOut
         })
+        .to('.main-desc', 12, {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            ease: Power0.easeOut
+        })
 
     var scene = new ScrollMagic.Scene({
         triggerElement: '#intro',
-        duration: '100%',
+        duration: '200%',
         triggerHook: 0,
-        offset: '0'
     }).setTween(timelineIntro).setPin("#intro").addTo(controller)
 
 
@@ -274,6 +279,16 @@ document.addEventListener('DOMContentLoaded', function () {
     timelineOrigin
         .from('#origins-image', 500, {
             opacity: 0,
+            ease: Power0.easeOut
+        })
+        .to('#shine-effect', 500, {
+            opacity: 1,
+            right: "50%",
+            ease: Power0.easeOut
+        })
+        .to('#shine-effect', 500, {
+            opacity: 0,
+            right: "-92%",
             ease: Power0.easeOut
         })
         .to('#origins-image', 500, {
@@ -290,6 +305,16 @@ document.addEventListener('DOMContentLoaded', function () {
             top: "-100vh",
             ease: Power0.easeOut
         })
+        .to('#shine-effect', 500, {
+            opacity: 1,
+            right: "50%",
+            ease: Power0.easeOut
+        })
+        .to('#shine-effect', 500, {
+            opacity: 0,
+            right: "168%",
+            ease: Power0.easeOut
+        })
         .from('#origins-para2', 1000, {
             y: 20,
             top: "100vh",
@@ -300,8 +325,18 @@ document.addEventListener('DOMContentLoaded', function () {
             top: "-100vh",
             ease: Power0.easeOut
         })
+        .to('#shine-effect', 500, {
+            opacity: 1,
+            right: "50%",
+            ease: Power0.easeOut
+        })
+        .to('#shine-effect', 500, {
+            opacity: 0,
+            right: "-92%",
+            ease: Power0.easeOut
+        })
         .to('#origins-image', 500, {
-            // scale: 0.7,
+            scale: 0.7,
             opacity: 0,
             ease: Power0.easeOut
         })
@@ -314,12 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var timelineTheRange = new TimelineMax();
     timelineTheRange
-        .from('.levels', 5000, {
-            y: 100,
-            opacity: 0,
-            ease: Power0.easeOut
-        })
-        .from('.tr-timeline', 5000, {
+        .from('.tr-bigbang', 5000, {
             opacity: 0,
             ease: Power0.easeOut
         })
@@ -327,12 +357,38 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity: 0,
             ease: Power0.easeOut
         })
+        .from('.levels', 5000, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
         .from('.tr-gridLine', 5000, {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('.tr-txt-4', 5000, {
+        .from('.tr-timeline', 5000, {
             opacity: 0,
+            ease: Power0.easeOut
+        })
+        .from('.tr-txt-4', 5000, { //present day
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .from('.tr-hubble-icon', 5000, {
+            opacity: 0,
+            ease: Power0.easeOut
+        }, "icons")
+        .from('.tr-webb-icon', 5000, {
+            opacity: 0,
+            ease: Power0.easeOut
+        }, "icons")
+        .from('.tr-hubble-limit', 5000, {
+            opacity: 0,
+            y: -50,
+            ease: Power0.easeOut
+        })
+        .from('.tr-webb-limit', 5000, {
+            opacity: 0,
+            y: -50,
             ease: Power0.easeOut
         })
         .from('.tr-txt-3', 5000, {
@@ -352,18 +408,8 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .from('.tr-bigbang', 5000, {
+        .to('.the-range', 5000, {
             opacity: 0,
-            ease: Power0.easeOut
-        })
-        .from('.hubble-grp', 5000, {
-            opacity: 0,
-            y: -50,
-            ease: Power0.easeOut
-        })
-        .from('.webb-grp', 5000, {
-            opacity: 0,
-            y: -50,
             ease: Power0.easeOut
         })
         .from('#range-para1', 5000, {
