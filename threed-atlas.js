@@ -252,13 +252,40 @@ function init() {
     // scene.add(Boxmesh);
 
     var spritey = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    spritey.position.set(0, 200, 100);
+    spritey.position.set(0, 200, 170);
     scene.add(spritey);
 
     var spritey2 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    spritey2.position.set(-80, 100, 200);
+    spritey2.position.set(-80, 80, 220);
     scene.add(spritey2);
+    
+    var spritey3 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    spritey3.position.set(-50, 120, 280);
+    scene.add(spritey3);
 
+    var spritey4 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    spritey4.position.set(150, -10, 0);
+    scene.add(spritey4);
+
+    var spritey5 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    spritey5.position.set(0, 0, 0);
+    scene.add(spritey5);
+
+    var spritey6 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    spritey6.position.set(-35, 170, -80);
+    scene.add(spritey6);
+
+    var spritey7 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    spritey7.position.set(0, 0, 0);
+    scene.add(spritey7);
+
+    var spritey8 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    spritey8.position.set(-50, 25, 240);
+    scene.add(spritey8);
+
+    var spritey9 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
+    spritey9.position.set(30, 15, 200);
+    scene.add(spritey9);
     // =======================================================
     // Anotation
     // ==========================================================
@@ -362,10 +389,31 @@ function init() {
     var domEvents = new THREEx.DomEvents(camera, renderer.domElement)
 
     domEvents.addEventListener(spritey, 'click', function (event) {
-        console.log('you clicked on the mesh')
+        $(".annotation").html("Text1")
     }, false)
     domEvents.addEventListener(spritey2, 'click', function (event) {
-        console.log('you clicked on the mesh2')
+        $(".annotation").html("Text2")
+    }, false)
+    domEvents.addEventListener(spritey3, 'click', function (event) {
+        $(".annotation").html("Text3")
+    }, false)
+    domEvents.addEventListener(spritey4, 'click', function (event) {
+        $(".annotation").html("Text4")
+    }, false)
+    domEvents.addEventListener(spritey5, 'click', function (event) {
+        $(".annotation").html("Text5")
+    }, false)
+    domEvents.addEventListener(spritey6, 'click', function (event) {
+        $(".annotation").html("Text6")
+    }, false)
+    domEvents.addEventListener(spritey7, 'click', function (event) {
+        $(".annotation").html("Text7")
+    }, false)
+    domEvents.addEventListener(spritey8, 'click', function (event) {
+        $(".annotation").html("Text8")
+    }, false)
+    domEvents.addEventListener(spritey9, 'click', function (event) {
+        $(".annotation").html("Text9")
     }, false)
 
 
