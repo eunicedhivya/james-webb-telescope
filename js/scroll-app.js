@@ -466,18 +466,52 @@ document.addEventListener('DOMContentLoaded', function () {
             // timestamp: 1640106813111
             // type: "update"
             if (controller.info("scrollDirection") === "FORWARD") {
-                if (e.scrollPos > 7874 && e.scrollPos < 10000) {
+                if (e.scrollPos > 9400 && e.scrollPos < 10800) {
                     $("#step1").css("opacity", 1)
-                } else if (e.scrollPos > 10500 && e.scrollPos < 15000) {
+                } else if (e.scrollPos > 10987 && e.scrollPos < 11663) {
                     $("#step1").css("opacity", 0)
                     $("#step2").css("opacity", 1)
+                } else if (e.scrollPos > 12300 && e.scrollPos < 13774) {
+                    $("#step2").css("opacity", 0)
+                    $("#step3").css("opacity", 1)
+                } else if (e.scrollPos > 12300 && e.scrollPos < 13774) {
+                    $("#step3").css("opacity", 0)
+                    $("#step4").css("opacity", 1)
+                } else if (e.scrollPos > 19024 && e.scrollPos < 20200) {
+                    $("#step4").css("opacity", 0)
+                    $("#step5").css("opacity", 1)
+                } else if (e.scrollPos > 20500 && e.scrollPos < 22198) {
+                    $("#step5").css("opacity", 0)
+                    $("#step6").css("opacity", 1)
+                } else if (e.scrollPos > 22198 && e.scrollPos < 28042) {
+                    $("#step6").css("opacity", 0)
+                    $("#step7").css("opacity", 1)
+                } else if (e.scrollPos > 28042 && e.scrollPos < 29288) {
+                    $("#step7").css("opacity", 0)
+                    $("#step8").css("opacity", 1)
+                } else if (e.scrollPos > 29570 && e.scrollPos < 30871) {
+                    $("#step8").css("opacity", 0)
+                    $("#step9").css("opacity", 1)
+                } else if (e.scrollPos > 30871 && e.scrollPos < 32811) {
+                    $("#step9").css("opacity", 0)
+                    $("#step10").css("opacity", 1)
+                } else if (e.scrollPos > 31679 && e.scrollPos < 33870) {
+                    $("#step10").css("opacity", 0)
+                    $("#step11").css("opacity", 1)
+                } else if (e.scrollPos > 34247 && e.scrollPos < 35578) {
+                    $("#step11").css("opacity", 0)
+                    $("#step12").css("opacity", 1)
+                } else if (e.scrollPos > 34247 && e.scrollPos < 35578) {
+                    $("#step11").css("opacity", 0)
+                    $("#step12").css("opacity", 1)
                 }
             } else {
-                if (e.scrollPos > 7874 && e.scrollPos < 10000) {
-                    $("#step1").css("opacity", 0)
-                } else if (e.scrollPos > 10500 && e.scrollPos < 15000) {
-                    $("#step2").css("opacity", 0)
-                }
+                // if (e.scrollPos > 7874 && e.scrollPos < 10000) {
+                //     $("#step1").css("opacity", 0)
+                // } else if (e.scrollPos > 10500 && e.scrollPos < 15000) {
+                //     $("#step2").css("opacity", 0)
+                // }
+                $(".telescope-steps").css("opacity", 0)
             }
         })
         .setPin("#telescope")
@@ -497,11 +531,13 @@ document.addEventListener('DOMContentLoaded', function () {
         .from('#fairing-left', 4, {
             x: 100,
             opacity: 0,
+            // rotation: 90, transformOrigin: "left 50%",
             ease: Power0.easeOut
         }, "one")
         .from('#fairing-right', 4, {
             x: -100,
             opacity: 0,
+            // rotation: 90, transformOrigin: "left 50%",
             ease: Power0.easeOut
         }, "one")
 
