@@ -589,95 +589,82 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var timelineRocket = new TimelineMax();
     timelineRocket
-        .to('#myimg2', 0.2, {
+        .to('#myimg2', 1, {
             scale: 2.5,
             opacity: 1,
             ease: Power0.easeOut
         })
-        .from('#backtorocket', 0.2, {
-            y: -700,
+        .from('#ariane-svg', 1, {
             opacity: 0,
             ease: Power0.easeOut
         })
-        .to('#backtorocket', 0.2, {
-            y: 300,
-            opacity: 1,
-            ease: Power0.easeOut
-        })
-        .to('#backtorocket', 0.2, {
-            y: 600,
-            opacity: 1,
-            ease: Power0.easeOut
-        })
-        .to('#backtorocket', 0.2, {
+        .from('#backtorocket', 4, {
             y: 700,
-            opacity: 0,
+            opacity: 1,
             ease: Power0.easeOut
         })
-        .to('#myimg2', 0.5, {
-            y: -210,
+        .to('#backtorocket', 4, {
+            y: -700,
+            opacity: 1,
+            ease: Power0.easeOut
+        })
+        .to('#myimg2', 4, {
+            y: -250,
             scale: 0.9,
             ease: Power0.easeOut
-        }, "one")
-        .from('#ariane-svg', 0.5, {
-            y: 0,
-            opacity: 0,
+        })
+        .to('#myimg2', 2, {
+            y: -250,
+            ease: Power0.easeOut
+        })
+        .to('#myimg2', 2, {
+            y: -180,
             ease: Power0.easeOut
         }, "one")
-        .from('#fairing-left', 0.5, {
+        .from('#ariane-svg', 1, {
+            y: 100,
+            opacity: 1,
+            ease: Power0.easeOut
+        }, "one")
+        .to('#ariane-svg', 4, {
+            y: -100,
+            opacity: 1,
+            ease: Power0.easeOut
+        }, "one")
+        .from('#fairing-left', 4, {
             x: 150,
             y: -10,
             rotation: 45, transformOrigin: "left 100%",
             ease: Power0.easeOut
         }, "one")
-        .from('#fairing-right', 0.5, {
+        .from('#fairing-right', 4, {
             x: -150,
             y: -10,
             rotation: -45, transformOrigin: "left 100%",
             ease: Power0.easeOut
         }, "one")
-        .from('#rocket-body', 0.5, {
+        .from('#rocket-body', 4, {
             y: 200,
             ease: Power0.easeOut
         }, "one")
-        .from('#backtorocket2', 0.2, {
-            y: -700,
-            opacity: 0,
-            ease: Power0.easeOut
-        })
-        .to('#backtorocket2', 0.2, {
-            y: 300,
-            opacity: 1,
-            ease: Power0.easeOut
-        })
-        .to('#backtorocket2', 0.2, {
-            y: 600,
-            opacity: 1,
-            ease: Power0.easeOut
-        })
-        .to('#backtorocket2', 0.2, {
+        .from('#backtorocket2', 4, {
             y: 700,
-            opacity: 0,
+            opacity: 1,
             ease: Power0.easeOut
         })
-        .from('#backtorocket3', 0.2, {
+        .to('#backtorocket2', 4, {
             y: -700,
-            opacity: 0,
-            ease: Power0.easeOut
-        })
-        .to('#backtorocket3', 0.2, {
-            y: 300,
             opacity: 1,
             ease: Power0.easeOut
         })
-        .to('#backtorocket3', 0.2, {
-            y: 600,
-            opacity: 1,
-            ease: Power0.easeOut
-        })
-        .to('#backtorocket3', 0.2, {
+        .from('#backtorocket3', 4, {
             y: 700,
-            opacity: 0,
+            opacity: 1,
+            ease: Power0.easeOut
+        })
+        .to('#backtorocket3', 4, {
+            y: -700,
+            opacity: 1,
             ease: Power0.easeOut
         })
         .to('#ariane-svg', 0.2, {
@@ -689,7 +676,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ease: Power0.easeOut
         }, "two")
 
-    var scene6 = new ScrollMagic.Scene({ triggerElement: "#ariane", duration: 20000, triggerHook: 0 })
+    var scene6 = new ScrollMagic.Scene({ triggerElement: "#ariane", duration: 10000, triggerHook: 0 })
         .setTween(timelineRocket)
         .setPin("#ariane")
         .setClassToggle("#ariane", "active")
