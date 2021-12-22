@@ -404,11 +404,12 @@ video{
             background-color: rgba(0, 0, 0, 0.8);
         }
 
-#backtorocket {
+#backtorocket, #backtorocket2, #backtorocket3 {
     position: absolute;
     top: 1000%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 

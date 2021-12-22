@@ -525,13 +525,17 @@ document.addEventListener('DOMContentLoaded', function () {
             ease: Power0.easeOut
         })
         .from('#backtorocket', 0.2, {
-            scale: 2,
+            scale: 1.5,
             opacity: 0,
             ease: Power0.easeOut
         })
-        .to('#backtorocket', 1, {
+        .to('#backtorocket', 0.2, {
             scale: 1,
             opacity: 1,
+            ease: Power0.easeOut
+        })
+        .to('#backtorocket', 0.2, {
+            opacity: 0,
             ease: Power0.easeOut
         })
         .to('#myimg2', 0.5, {
@@ -560,8 +564,32 @@ document.addEventListener('DOMContentLoaded', function () {
             y: 200,
             ease: Power0.easeOut
         }, "one")
+        .from('#backtorocket2', 0.2, {
+            scale: 1.5,
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .to('#backtorocket2', 1, {
+            scale: 1,
+            opacity: 1,
+            ease: Power0.easeOut
+        })
+        .to('#backtorocket2', 0.2, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .from('#backtorocket3', 1, {
+            scale: 1.5,
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .to('#backtorocket3', 1, {
+            scale: 1,
+            opacity: 1,
+            ease: Power0.easeOut
+        })
 
-    var scene6 = new ScrollMagic.Scene({ triggerElement: "#ariane", duration: 40000, triggerHook: 0 })
+    var scene6 = new ScrollMagic.Scene({ triggerElement: "#ariane", duration: 20000, triggerHook: 0 })
         .setTween(timelineRocket)
         .setPin("#ariane")
         .setClassToggle("#ariane", "active")
