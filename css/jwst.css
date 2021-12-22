@@ -366,6 +366,10 @@ video{
     transform: translate(-50%, -50%);
 }
 
+#telescope #myimg{
+    transition: all 1s;
+}
+
 #ariane{
     position: relative;
 }
@@ -373,10 +377,39 @@ video{
     text-align: center;
 }
 #ariane svg{ 
-    width: 50%;
-    margin: 0 auto;
+    width: 40%;
+    margin: 60px auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
+
+
+#myimg2{
+        position: absolute;
+    z-index: -1;
+    opacity: 0;
+    left: 0px;
+}
+
+.telescope-steps {
+            border: 1px solid #fff;
+            padding: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .5s;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+#backtorocket {
+    position: absolute;
+    top: 1000%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 
 @media (max-width:767px){
@@ -402,7 +435,28 @@ video{
      #jwst-3d {
     margin-top: -50%;
     margin-bottom: 50%;
-}
+    }
+
+     #myimg {
+    transform: scale(2.5) translateY(30%);
+    }
+
+    #myimg2 {
+    transform: scale(2.5);
+    top: 740%;
+    }
+
+    .telescope-steps {
+        top: 180%;
+    }
+
+    /* #backtorocket {
+        width: 80%;
+    } */
+
+    /* #ariane{
+        height: 100vh;
+    } */
 
 }
 @media (min-width:1024px){
@@ -426,6 +480,12 @@ video{
     #origins img, #origins #origins-para1, #origins #origins-para2{
         width: 50%;
     }
-    
+    .telescope-steps {
+        top: 50%;
+    } 
+
+    #myimg2 {
+    transform: scale(0.5);
+    }
 
 }
