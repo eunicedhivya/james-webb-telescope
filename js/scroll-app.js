@@ -381,6 +381,23 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity: 0,
             ease: Power0.easeOut
         }, "icons")
+        .from('.tr-txt-3', 5000, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .from('.tr-txt-2', 5000, {
+            opacity: 0,
+            ease: Power0.easeOut
+        }, "txt2")
+        .from('.tr-splitarrow', 5000, {
+            opacity: 0,
+            x: -10,
+            ease: Power0.easeOut
+        }, "txt2")
+        .from('.tr-txt-1', 5000, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
         .from('.tr-hubble-limit', 5000, {
             opacity: 0,
             y: -50,
@@ -391,21 +408,8 @@ document.addEventListener('DOMContentLoaded', function () {
             y: -50,
             ease: Power0.easeOut
         })
-        .from('.tr-txt-3', 5000, {
-            opacity: 0,
-            ease: Power0.easeOut
-        })
-        .from('.tr-txt-2', 5000, {
-            opacity: 0,
-            ease: Power0.easeOut
-        })
-        .from('.tr-splitarrow', 5000, {
-            opacity: 0,
-            x: -10,
-            ease: Power0.easeOut
-        })
-        .from('.tr-txt-1', 5000, {
-            opacity: 0,
+        .to('.the-range', 5000, {
+            opacity: 0.4,
             ease: Power0.easeOut
         })
         .from('#range-para1', 5000, {
