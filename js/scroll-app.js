@@ -525,16 +525,22 @@ document.addEventListener('DOMContentLoaded', function () {
             ease: Power0.easeOut
         })
         .from('#backtorocket', 0.2, {
-            scale: 1.5,
+            y: -700,
             opacity: 0,
             ease: Power0.easeOut
         })
         .to('#backtorocket', 0.2, {
-            scale: 1,
+            y: 300,
             opacity: 1,
             ease: Power0.easeOut
         })
         .to('#backtorocket', 0.2, {
+            y: 600,
+            opacity: 1,
+            ease: Power0.easeOut
+        })
+        .to('#backtorocket', 0.2, {
+            y: 700,
             opacity: 0,
             ease: Power0.easeOut
         })
@@ -565,27 +571,43 @@ document.addEventListener('DOMContentLoaded', function () {
             ease: Power0.easeOut
         }, "one")
         .from('#backtorocket2', 0.2, {
-            scale: 1.5,
+            y: -700,
             opacity: 0,
             ease: Power0.easeOut
         })
-        .to('#backtorocket2', 1, {
-            scale: 1,
+        .to('#backtorocket2', 0.2, {
+            y: 300,
             opacity: 1,
             ease: Power0.easeOut
         })
         .to('#backtorocket2', 0.2, {
-            opacity: 0,
-            ease: Power0.easeOut
-        })
-        .from('#backtorocket3', 1, {
-            scale: 1.5,
-            opacity: 0,
-            ease: Power0.easeOut
-        })
-        .to('#backtorocket3', 1, {
-            scale: 1,
+            y: 600,
             opacity: 1,
+            ease: Power0.easeOut
+        })
+        .to('#backtorocket2', 0.2, {
+            y: 700,
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .from('#backtorocket3', 0.2, {
+            y: -700,
+            opacity: 0,
+            ease: Power0.easeOut
+        })
+        .to('#backtorocket3', 0.2, {
+            y: 300,
+            opacity: 1,
+            ease: Power0.easeOut
+        })
+        .to('#backtorocket3', 0.2, {
+            y: 600,
+            opacity: 1,
+            ease: Power0.easeOut
+        })
+        .to('#backtorocket3', 0.2, {
+            y: 700,
+            opacity: 0,
             ease: Power0.easeOut
         })
 
