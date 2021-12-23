@@ -138,27 +138,50 @@ var images = [
 document.addEventListener('DOMContentLoaded', function () {
     var controller = new ScrollMagic.Controller();
 
-    var timelineIntro = new TimelineMax();
+    // var timelineIntro = new TimelineMax();
 
-    timelineIntro
-        .from('.main-desc', 1, {
-            x: 0,
-            y: -50,
-            opacity: 0,
-            ease: Power0.easeOut
-        })
-        .to('.main-desc', 12, {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            ease: Power0.easeOut
-        })
+    // timelineIntro
+    //     .from('.main-desc', 1, {
+    //         x: 0,
+    //         y: -50,
+    //         opacity: 0,
+    //         ease: Power0.easeOut
+    //     })
+    //     .to('.main-desc', 12, {
+    //         x: 0,
+    //         y: 0,
+    //         opacity: 1,
+    //         ease: Power0.easeOut
+    //     })
+
+    // var scene = new ScrollMagic.Scene({
+    //     triggerElement: '#intro',
+    //     duration: '200%',
+    //     triggerHook: 0,
+    // }).setTween(timelineIntro).setPin("#intro").addTo(controller)
+
+    var timelineIntro = new TimelineMax();
+    timelineIntro.to('#forth', 6, {
+        y: -550
+    }, '-=6')
+        .to('#third', 6, {
+            y: -450
+        }, '-=6')
+        .to('#second', 6, {
+            y: -150
+        }, '-=6')
+        .to('#first', 6, {
+            y: -50
+        }, '-=6')
 
     var scene = new ScrollMagic.Scene({
-        triggerElement: '#intro',
+        triggerElement: 'intro-section',
         duration: '200%',
-        triggerHook: 0,
-    }).setTween(timelineIntro).setPin("#intro").addTo(controller)
+        triggerHook: 0
+    })
+        .setTween(timelineIntro)
+        .setPin('intro-section')
+        .addTo(controller);
 
 
     var timelineOrigin = new TimelineMax();
