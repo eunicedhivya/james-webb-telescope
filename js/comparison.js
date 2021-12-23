@@ -53,6 +53,9 @@ var compareData = {
     }
 }
 
+$(".hubbleDesc").text(compareData["0"]["hubble"]);
+$(".jamesDesc").text(compareData["0"]["jwst"]);
+
 // var compDesc = [{ "hubbleDesc": "Test1", "jamesDesc": "Test2" }, { "hubbleDesc": "Test3", "jamesDesc": "Test4" }];
 $("#comparisonList li").on("click", function () {
     $("#comparisonList li").removeClass("active");
