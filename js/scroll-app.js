@@ -403,9 +403,17 @@ document.addEventListener('DOMContentLoaded', function () {
             y: -50,
             ease: Power0.easeOut
         })
+        .from('.tr-txt-5', 5000, {
+            opacity: 0,
+            ease: Power0.easeOut
+        })
         .from('.tr-webb-limit', 5000, {
             opacity: 0,
             y: -50,
+            ease: Power0.easeOut
+        })
+        .from('.tr-txt-6', 5000, {
+            opacity: 0,
             ease: Power0.easeOut
         })
         .to('.the-range', 5000, {
@@ -524,8 +532,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // console.log("start")
             // console.log("start")
             // console.log(controller.info("scrollDirection"));
-            console.log(e.startPos);
-            console.log(e.scrollPos);
+            // console.log(e.startPos);
+            // console.log(e.scrollPos);
             if (controller.info("scrollDirection") === "FORWARD") {
                 if ((e.scrollPos > e.startPos + 1800) && (e.scrollPos < e.startPos + 3000)) {
                     $("#step1").css("opacity", 1)
