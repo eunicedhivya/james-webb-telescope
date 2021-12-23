@@ -198,15 +198,16 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
 }
 .the-range .tr-gridLine{
     position: absolute;
-    top: 0;
-    width: 100%;
+    top: -16px;
+    width: 600px;
     z-index: 2;
+    height: 850px;
 }
 .the-range .tr-timeline{
-           position: absolute;
-    top: 55px;
+    position: absolute;
+    top: 20px;
     z-index: 3;
-    width: 33px;
+    width: 35px;
 }
 .the-range .tr-bigbang{
    position: absolute;
@@ -228,7 +229,7 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
 }
 .the-range .hubble-grp{
     position: absolute;
-    top: -6px;
+    top: -28px;
     width: 35px;
     left: 36%;
     transform: translateX(-36%);
@@ -245,7 +246,7 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
 }
 .the-range .webb-grp{
     position: absolute;
-    top: -6px;
+    top: -28px;
     width: 85px;
     left: 65%;
     transform: translateX(-65%);
@@ -254,7 +255,7 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
 .the-range .tr-hubble-limit{
     position: absolute;
     top: 90px;
-    width: 2px;
+    width: 0.167em;
     left: 36%;
     transform: translateX(-36%);
     z-index: 5;
@@ -263,8 +264,8 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
 .the-range .tr-webb-limit{
     position: absolute;
     top: 90px;
-    width: 2px;
-    left: 63%;
+    width: 0.148em;
+    left: 54%;
     transform: translateX(-63%);
     z-index: 5;
 }
@@ -312,7 +313,7 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
 }
 .the-range .tr-txt-6{
     position: absolute;
-    top: 514px;
+    top: 525px;
     width: 108px;
     left: 180px;
     z-index: 5;
