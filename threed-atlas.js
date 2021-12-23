@@ -403,6 +403,26 @@ function init() {
 
     var domEvents = new THREEx.DomEvents(camera, renderer.domElement)
 
+    domEvents.addEventListener(marker1, 'mousemove', function (event) {
+        // new_material.color = marker1.material.color;
+        // mesh.material = new_material;
+        // return renderer.render(scene, camera);
+        console.log("test")
+        gsap.to(marker1, {
+            duration: 1,
+            scale: 2,
+            onUpdate: () => {
+                controls.enabled = false;
+
+            },
+            onComplete: () => {
+                controls.enabled = true;
+
+
+            }
+        });
+    });
+
     domEvents.addEventListener(marker1, 'click', function (event) {
         $(".annotation").html("Text1")
     }, false)
