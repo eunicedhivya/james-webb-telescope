@@ -36,8 +36,8 @@ function init() {
     camera.position.set(0, 120, 600)
     camera.rotation.set(0, 0, 0)
 
-    var camHelper = new THREE.CameraHelper(camera);
-    scene.add(camHelper);
+    // var camHelper = new THREE.CameraHelper(camera);
+    // scene.add(camHelper);
 
 
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -52,14 +52,14 @@ function init() {
 
     document.body.appendChild(renderer.domElement);
 
-    var axesHelper = new THREE.AxesHelper(5);
-    scene.add(axesHelper);
+    // var axesHelper = new THREE.AxesHelper(5);
+    // scene.add(axesHelper);
 
-    var size = 10;
-    var divisions = 10;
+    // var size = 10;
+    // var divisions = 10;
 
-    var gridHelper = new THREE.GridHelper(size, divisions);
-    scene.add(gridHelper);
+    // var gridHelper = new THREE.GridHelper(size, divisions);
+    // scene.add(gridHelper);
 
 
     // Load the 3D model

@@ -481,6 +481,9 @@ video{
             background-color: rgba(0, 0, 0, 0.8);
             text-align: center;
         }
+.telescope-steps p:first-child{
+   color: #ffcc00;
+        }
 
 #backtorocket, #backtorocket2, #backtorocket3 {
     position: absolute;
@@ -512,8 +515,9 @@ video{
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    max-width: 1000px;
+    /* width: 1000px; */
     margin: 0 auto;
+        height: 100vh;
 }
 #comparision .col img {
     max-width: 325px;
@@ -571,8 +575,45 @@ video{
     width: 100%;
 } 
 
+.credits {
+    text-align: center;
+    font-size: 11px;
+    line-height: 10px;
+}
+
+.credits h3 {
+    text-transform: uppercase;
+}
+.credits span {
+    color: rgb(128, 126, 126);
+}
+
+#othervideos {
+    text-align: center;
+}
+#othervideos h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#othervideos #videoList{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    column-gap: 20px;
+}
+#othervideos iframe{
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
 
 @media (max-width:767px){
+    #othervideos #videoList{
+        grid-template-columns: 100%;
+        width: 100%;
+    }
     #intro h1, #intro p{
         position: absolute;
     }
@@ -609,7 +650,7 @@ video{
     }
 
     .telescope-steps {
-        top: 230%;
+        top: 240%;
         width: 80%;
     }
 
@@ -716,6 +757,14 @@ video{
 
 }
 @media (min-width:1024px){
+    #telescope h3 {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        text-align: center;
+    }
 
     .the-range{
         width: 100%;
@@ -893,6 +942,7 @@ video{
 
     #telescope #myimg {
         margin-left: 20%;
+        margin-top: -80px;
     }
 
     #myimg2 {
@@ -905,6 +955,10 @@ video{
         width: 100%;
         height: 200%;
     }
+
+    #knightlab-timeline iframe{
+        height: 700px;
+    } 
 
 
 }
