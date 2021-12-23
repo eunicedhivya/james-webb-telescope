@@ -415,7 +415,11 @@ document.addEventListener('DOMContentLoaded', function () {
         triggerHook: 0,
     }).setTween(timelineTheLegrange).setPin("#the-lagrange").setClassToggle("#the-lagrange", "active").addTo(controller)
 
-
+    var scene3D = new ScrollMagic.Scene({ triggerElement: "#jwst-3d", duration: "100%", triggerHook: 0 })
+        .setTween()
+        .setPin("#jwst-3d")
+        .setClassToggle("#jwst-3d", "active")
+        .addTo(controller);
 
     var obj = { curImg: 0 };
 
