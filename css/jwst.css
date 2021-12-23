@@ -443,12 +443,31 @@ video{
 #ariane{
     position: relative;
     height: 100vh;
+    background-image: url('../assets/imgs/stars.jpg');
+    background-size: 100%;
 }
-/* #ariane.active{
-    position: relative;
-     height: 50px; 
- height: 100vh; 
-} */
+
+#myVideo2 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    transition: all 0.8s;
+}
+
+
+#the-lagrange.active #myVideo2 {
+    /* position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%; */
+    opacity: 1;
+}
+
+
 .ariane-rocket {
     text-align: center;
 }
@@ -908,7 +927,7 @@ video{
         margin: 0 auto;
         top: 30%;
         transform: translate(-50%, -50%);
-        left: 50%;
+        left: 70%;
     }
     #intro h1, #intro p{
         width: 100%;
@@ -921,6 +940,10 @@ video{
     }
     #intro p{
         margin-top: 45vh;
+    }
+
+    #origins{
+        background-image: url('../assets/imgs/stars.jpg');
     }
 
     #origins #origins-para1, #origins #origins-para2{
@@ -947,8 +970,8 @@ video{
 
     #myimg2 {
        width: 31%;
-    top: 50%;
-    left: 34%;
+        top: 50%;
+        left: 54%;
     }
 
     #shine-effect {
@@ -959,6 +982,16 @@ video{
     #knightlab-timeline iframe{
         height: 700px;
     } 
+
+    #backtorocket, #backtorocket2, #backtorocket3 {
+        position: absolute;
+        top: 50%;
+        left: 32%;
+        transform: translate(-50%, -50%);
+        z-index: 20;
+        text-align: center;
+        /* opacity: 0; */
+    }
 
 
 }
