@@ -272,7 +272,7 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
         box-sizing: border-box;
         overflow: hidden;
     }
-    #origins img, #origins #origins-para1, #origins #origins-para2{
+    #origins img, #origins #origins-para1, #origins #origins-para2, #origins-para3{
         position: absolute;
         top: 0;
         left: 50%;
@@ -576,7 +576,11 @@ video{
     cursor: pointer;
 }
 #comparisonList li:hover {
-    color: #ffd664;
+    color: #ffcc00;
+}
+
+.hubbleDesc, .jamesDesc {
+    color: #ffcc00;
 }
 
 .timeline-intro {
@@ -946,7 +950,7 @@ video{
         background-image: url('../assets/imgs/stars.jpg');
     }
 
-    #origins #origins-para1, #origins #origins-para2{
+    #origins #origins-para1, #origins #origins-para2, #origins-para3{
         width: 50%;
     }
 

@@ -221,6 +221,16 @@ document.addEventListener('DOMContentLoaded', function () {
             right: "-92%",
             ease: Power0.easeOut
         })
+        .from('#origins-para3', 4, {
+            y: 20,
+            top: "100vh",
+            ease: Power0.easeOut
+        })
+        .to('#origins-para3', 8, {
+            y: -20,
+            top: "-100vh",
+            ease: Power0.easeOut
+        })
         .to('#origins-image', 4, {
             scale: 0.7,
             opacity: 0,
