@@ -24,6 +24,12 @@ body{
     max-width: 80px;
     margin: 0 auto;
 }
+#scroll6{
+    transform: translateY(-210%);
+}
+#scroll7{
+    transform: translateY(85%);
+}
 .tv9-interactive section{
     padding:20px;
     box-sizing: border-box;
