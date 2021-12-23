@@ -24,6 +24,9 @@ body{
     max-width: 80px;
     margin: 0 auto;
 }
+#scroll2{
+    transform: translateY(150%);
+}
 #scroll6{
     transform: translateY(-210%);
 }
