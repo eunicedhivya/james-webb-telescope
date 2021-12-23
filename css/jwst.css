@@ -18,6 +18,12 @@ body{
 .tv9-interactive img{
     width: 100%;
 }
+
+.scroll-img{
+    width: 100% !important;
+    max-width: 80px;
+    margin: 0 auto;
+}
 .tv9-interactive section{
     padding:20px;
     box-sizing: border-box;
