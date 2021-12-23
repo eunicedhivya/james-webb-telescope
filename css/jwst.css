@@ -480,32 +480,34 @@ video{
 
 
 /* Comparison section */
-/* #comparision {
+#comparision {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 #comparision .col img {
     max-width: 480px;
 }
 #comparision ul li {
-    font-family: "Montserrat";
+        font-family: "Montserrat";
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 22px;
     color: #919191;
-    padding: 7px 0;
+    padding: 5px 16px;
 }
 #comparision ul li.active {
-    color: #ffd664;
+    color: #ffd230;
 }
 #comparision h2, #comparision h3 {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 30px;
 }
 #comparision h2 {
@@ -518,7 +520,14 @@ video{
     padding: 16px;
     border: 0.5px solid #fff;
     margin-top: 34px;
-} */
+}
+
+#comparisonList li {
+    cursor: pointer;
+}
+#comparisonList li:hover {
+    color: #ffd664;
+}
 
 
 @media (max-width:767px){
@@ -572,15 +581,76 @@ video{
             z-index: 12;
     }
 
-    /* #comparision {
+     #comparision {
         flex-direction: column;
     }
     #comparisonList {
-        display: flex;
-        position: relative;
-        transform: translateX(691px);
+        /* display: flex; */
+        /* position: relative; */
+        /* transform: translateX(707px); */
+        /* transition: all 0.2s; */
     }
-    #comparision ul li {
+
+    .carousel-menu {
+        align-items: center;
+        display: flex;
+        margin: 2rem auto;
+        position: relative;
+        width: 150px;
+    }
+
+    .carousel-menu::before{
+        content: '';
+        width: 390%;
+        border-bottom: solid 1px #fff;
+        position: absolute;
+        left: -200%;
+        top: -11%;
+        z-index: 1;
+    }
+    .carousel-menu::after{
+        content: '';
+        width: 390%;
+        border-bottom: solid 1px #fff;
+        position: absolute;
+        left: -200%;
+        top: 115%;
+        z-index: 1;
+    }
+    .carousel-menu .carousel_links{
+        display: flex;
+        transform: translateX(0);
+        transition: transform 0.25s;
+        align-items: center;
+    }
+    .carousel-menu button{
+        background: transparent;
+        border: 0;
+        border-radius: 50%;
+        color: #ffd230;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: bold;
+        height: 3rem;
+        position: absolute;
+        transition: opacity 0.25s;
+        width: 3rem;
+        z-index: 1;
+    }
+    .carousel-menu .carousel_links li{
+        width: 150px;
+    }
+
+    .carousel-menu .previous {
+      left: -40px;
+      position: absolute;
+    }
+    
+    .carousel-menu .next {
+      right: -40px;
+      position: absolute;
+    }
+    /* #comparision ul li {
         padding: 7px 15px;
         transition: 1s ease-in-out;
     }
@@ -599,15 +669,21 @@ video{
         top: 58%;
         font-size: 20px;
     }
-    #comparision .col:first-child {
+
+     */
+
+     #comparision .col:first-child {
         order: 1;
     }
     #comparision .col:last-child {
         order: 2;
-    } */
+    } 
 
 }
 @media (min-width:1024px){
+    .carousel-button{
+        display: none;
+    }
     #backtorocket, #backtorocket2, #backtorocket3{
         width: 300px;
     }
@@ -620,7 +696,7 @@ video{
     }
     #intro h1, #intro p{
         width: 100%;
-        max-width: 500px;
+        max-width: 700px;
         margin-left:auto ;
         margin-right:auto ;
     }
@@ -628,7 +704,7 @@ video{
         margin-top: 10vh;
     }
     #intro p{
-        margin-top: 50vh;
+        margin-top: 45vh;
     }
 
     #origins img, #origins #origins-para1, #origins #origins-para2{

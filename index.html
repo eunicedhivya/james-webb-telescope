@@ -236,23 +236,26 @@
             </div>
             <div class="col compCol">
                 <h2>Comparison</h2>
-                <ul id="comparisonList">
-                    <li class="active" data-id="0">Launch date</li>
-                    <li data-id="1">Launch mass</li>
-                    <li data-id="2">Dimensions</li>
-                    <li data-id="3">Mirror diametre</li>
-                    <li data-id="4">Mirror segments</li>
-                    <li data-id="5">Sunshield </li>
-                    <li data-id="6">Sunshield layers</li>
-                    <li data-id="7">Instrument type</li>
-                    <li data-id="8">Wavelengths</li>
-                    <li data-id="9">Power</li>
-                    <li data-id="10">Regime</li>
-                    <li data-id="11">Distance</li>
-                    <li data-id="12">Range</li>
-                </ul>
-                <div id="next"> &gt; </div>
-                <div id="prev"> &lt; </div>
+                <div class="carousel-menu">
+                    <button class="carousel-button previous" id="previous">
+                        &lt; </button>
+                    <ul class="carousel_links" id="comparisonList">
+                        <li class="active" data-id="0">Launch date</li>
+                        <li data-id="1">Launch mass</li>
+                        <li data-id="2">Dimensions</li>
+                        <li data-id="3">Mirror diametre</li>
+                        <li data-id="4">Mirror segments</li>
+                        <li data-id="5">Sunshield </li>
+                        <li data-id="6">Sunshield layers</li>
+                        <li data-id="7">Instrument type</li>
+                        <li data-id="8">Wavelengths</li>
+                        <li data-id="9">Power</li>
+                        <li data-id="10">Regime</li>
+                        <li data-id="11">Distance</li>
+                        <li data-id="12">Range</li>
+                    </ul>
+                    <button class="carousel-button next" id="next">&gt;</button>
+                </div>
             </div>
             <div class="col">
                 <h3>James Webb Space Telescope</h3>
@@ -262,16 +265,12 @@
         </section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <!-- <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script> -->
-    <!-- 
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script> -->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="js/scroll-app.js"></script>
+    <script src="js/comparison.js"></script>
 
 
 
