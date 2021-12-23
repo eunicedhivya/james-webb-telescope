@@ -11,6 +11,10 @@ body{
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
 }
+.tv9-interactive button{
+    border: none;
+    outline: none;
+}
 .tv9-interactive img{
     width: 100%;
 }
@@ -344,29 +348,37 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
     border: 1px solid #000;
 }
 
-.model {
-    position: absolute;
+/* .model {
+    width: 100vh;
+    height: 100vh;
+}*/
+
+
+.model.active{
+    position: fixed;
     top: 0;
-    left: -23px;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 8;
-}
-
-.model.active{
-    transform: scale(1.1);
-    left: 0px;
-    top: 35px;
-}
-
+} 
 #disable3dwindow {
-        position: absolute;
-    left: 40px;
+    position: absolute;
+    left: 0;
     /* bottom: 40px; */
-    top: 40px;
+    top: 0;
     width: 100px;
     height: 40px;
     z-index: 100;
+    background-color: #5a5a5a;
+    color: #FFF;
+    text-transform: uppercase;
+    padding: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 17px;
+    outline: none;
 }
 
     #jwst-3d {
@@ -383,7 +395,7 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: blue;
+    background-color: #000;
     opacity: 0.8;
     display: flex;
     flex-direction: column;
@@ -391,6 +403,15 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
     padding: 35px;
     text-align: center;
     z-index: 10;
+}
+
+.close3D {
+        background-color: #5a5a5a;
+    color: #FFF;
+    text-transform: uppercase;
+    padding: 10px;
+    width: fit-content;
+    margin: 17px auto;
 }
 
 #jwst-deployment{
@@ -534,6 +555,21 @@ video{
 #comparisonList li:hover {
     color: #ffd664;
 }
+
+.timeline-intro {
+    text-align: center;
+    margin: 200px auto;
+}
+.timeline-intro h3, p{
+    width: 100%;
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+#knightlab-timeline{
+    padding: 0;
+    width: 100%;
+} 
 
 
 @media (max-width:767px){

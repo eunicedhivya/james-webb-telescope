@@ -1,12 +1,16 @@
 document.getElementById('enable3dwindow').addEventListener("click", function () {
     document.getElementById('cover-3d').style.display = "none";
     document.getElementsByTagName('body')[0].style.overflow = "hidden";
+    $('.model').addClass("active")
+    $('#disable3dwindow').css("display", "block")
     // document.getElementById('model').style.transform = "scale(1.5)";
     // alert("test");
 })
 document.getElementById('disable3dwindow').addEventListener("click", function () {
     document.getElementById('cover-3d').style.display = "block";
-    document.getElementsByTagName('body')[0].removeAttribute("style")
+    document.getElementsByTagName('body')[0].removeAttribute("style");
+    $('.model').removeClass("active")
+    $('#disable3dwindow').css("display", "none")
 })
 
 var images = [
@@ -607,6 +611,12 @@ document.addEventListener('DOMContentLoaded', function () {
         .setTween(timelineRocket)
         .setPin("#ariane")
         .setClassToggle("#ariane", "active")
+        .addTo(controller);
+
+    var scene7 = new ScrollMagic.Scene({ triggerElement: "#comparision", duration: "100%", triggerHook: 0 })
+        .setTween()
+        .setPin("#comparision")
+        .setClassToggle("#comparision", "active")
         .addTo(controller);
 
 });

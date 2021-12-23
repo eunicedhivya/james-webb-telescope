@@ -33,7 +33,7 @@ function init() {
 
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
 
-    camera.position.set(0, 0, 300)
+    camera.position.set(0, 120, 600)
     camera.rotation.set(0, 0, 0)
 
     var camHelper = new THREE.CameraHelper(camera);
@@ -64,7 +64,8 @@ function init() {
 
     // Load the 3D model
     loader = new THREE.GLTFLoader();
-    loader.load('https://www.eunicedhivya.com/james-webb-telescope/scene.gltf', function (gltf) {
+    loader.load('assets/3d/scene-light3.gltf', function (gltf) {
+        // loader.load('https://www.eunicedhivya.com/james-webb-telescope/scene.gltf', function (gltf) {
         model = gltf.scene
         // model.position.set(0, -1, 0)
         model.scale.set(0.3, 0.3, 0.3)
@@ -73,45 +74,38 @@ function init() {
     });
 
     //add a light
-    // function addLight(source, xpos, ypos, zpos) {
-    //     var light = source;
-    //     light.position.x = xpos;
-    //     light.position.y = ypos;
-    //     light.position.z = zpos;
-    //     scene.add(light);
-    // }
 
-
-    const light = new THREE.PointLight(0xffffff, 1, 15000);
-    light.position.set(0, 100, 500);
+    var light = new THREE.DirectionalLight(0xffffff, 1, 50000);
+    light.position.set(-1.7, 9.9, 10);
     scene.add(light);
 
-    const light2 = new THREE.PointLight(0xffffff, 1, 1000);
-    light2.position.set(0, -100, 400);
+    var light2 = new THREE.DirectionalLight(0xffffff, 1, 50000);
+    light2.position.set(5, 10, -10);
     scene.add(light2);
 
-    const light3 = new THREE.AmbientLight(0xffffff, 1, 50);
-    light3.position.set(0, 50, -600);
+    var light3 = new THREE.DirectionalLight(0xffffff, 1, 50000);
+    light3.position.set(5, -16.3, 10);
     scene.add(light3);
 
-    // const pointLightHelper = new THREE.PointLightHelper(light);
-    // // const pointLightHelper2 = new THREE.PointLightHelper(light2);
-    // scene.add(pointLightHelper);
+    var light4 = new THREE.DirectionalLight(0xffffff, 1, 50000);
+    light4.position.set(1.3, -0.9, -10);
+    scene.add(light4);
 
 
+    var light5 = new THREE.AmbientLight(0xffffff, 1, 200000);
+    light5.position.set(0, 0, 0);
+    scene.add(light5);
 
-    // using reusable function addLight(source, xpos, ypos, zpos) 
-    // addLight(new THREE.AmbientLight(0xFFFFFF, 1, 500), 0, 0, 0);
-    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), 0, 0, 0);
-    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -0.409, 40.470, 600);
-    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -13.785, -17.626, 600);
-    // addLight(new THREE.AmbientLight(0xFFFFFF, 1, 200), 33.947, -0.972, 600);
-    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -20.429, 3.363, -22.666);
-    // addLight(new THREE.PointLight(0xFFFFFF, 0.4, 500), -8.801, 34.722, -11.382);
-    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -0.409, 40.470, 23.343);
-    // addLight(new THREE.PointLight(0xFFFFFF, 1, 500), -13.785, -17.626, 12.763);
-    // addLight(new THREE.DirectionalLight(0xFFFFFF, 1, 500), 33.947, -0.972, -8.920);
+    // ================ Old
+    // const light = new THREE.DirectionalLight(0xffffff, 1, 25000);
+    // light.position.set(5, 8, 9);
+    // scene.add(light);
 
+
+    // const light3 = new THREE.AmbientLight(0xffffff, 1, 80000);
+    // light3.position.set(1, 3, -28);
+    // scene.add(light3);
+    // =========================
 
 
     var controls = new THREE.OrbitControls(camera);
@@ -205,8 +199,8 @@ function init() {
         gsap.to(camera.position, {
             duration: 1,
             x: 0,
-            y: 0,
-            z: 450,
+            y: 120,
+            z: 600,
             onUpdate: () => {
                 controls.enabled = false;
                 controls.update();
@@ -217,22 +211,167 @@ function init() {
                 // camera.lookAt(scene.position);
             }
         });
-        gsap.to(camera.rotation, {
+
+
+    })
+    $('#item1').on("click", function () {
+        var html = '<p><strong>The Optical Telescope Element</strong></p> <p>The primary mirror, the secondary mirror and the supporting backplane are together known as OTE. It gathers the light from the objects of study and directs it to the science instruments. </p>'
+        // x: -182.36443795550838, y: 243.78631200069486, z: 299.82279151508703
+        controls.enabled = false;
+        gsap.to(camera.position, {
             duration: 1,
-            x: 0,
-            y: 0,
-            z: 0,
+            x: -182.36,
+            y: 243.78,
+            z: 299.82,
             onUpdate: () => {
                 controls.enabled = false;
                 controls.update();
+            },
+            onComplete: () => {
+                controls.enabled = true;
+            }
+        });
+        // var resetColor = new THREE.Color(0xffffff);
+        // var targetColor = new THREE.Color(0xff0000);
+        // TweenMax.to(marker1.material.color, 2, {
+        //     r: targetColor.r,
+        //     g: targetColor.g,
+        //     b: targetColor.b
+        // });
 
+        $(".annotation").html(html)
+
+    })
+    $('#item2').on("click", function () {
+        var html = '<p><strong>Primary Mirror</strong></p> <p>The segmented primary mirror is made up of beryllium coated with gold, and captures the infrared light coming from distant and faint objects. It bounces the incoming light towards the secondary mirror located at the front. </p>'
+        // x: -106.25393666792517, y: 196.95737850335908, z: 314.06028706911445
+        controls.enabled = false;
+        gsap.to(camera.position, {
+            duration: 1,
+            x: -106.25,
+            y: 196.95,
+            z: 314.06,
+            onUpdate: () => {
+                controls.enabled = false;
+                controls.update();
+            },
+            onComplete: () => {
+                controls.enabled = true;
+            }
+        });
+
+        $(".annotation").html(html)
+
+    })
+    $('#item3').on("click", function () {
+        var html = '<p><strong>Secondary Mirror</strong></p> <p>the platform which brings together all the support functions: orbit control and maintenance, power supply, thermal control and communications with Earth and between the observatory equipment.</p>'
+        //x: -255.37629420972843, y: 129.39370236052773, z: 346.9164668418456
+        controls.enabled = false;
+        gsap.to(camera.position, {
+            duration: 1,
+            x: -255.37,
+            y: 129.39,
+            z: 346.91,
+            onUpdate: () => {
+                controls.enabled = false;
+                controls.update();
+            },
+            onComplete: () => {
+                controls.enabled = true;
+            }
+        });
+
+        $(".annotation").html(html)
+
+    })
+    $('#item4').on("click", function () {
+        var html = '<p><strong>ISIM</strong></p> <p>The light captured by the OTE is sent to the ISIM, which is at the back of the spacecraft, behind the backplane. The ISIM is the heart of the observatory. It integrates the four major instruments on Webb, namely, Near-infrared camera, Near-infrared spectrograph, Mid-infrared instrument, Near-infrared imager and slitless spectrograph as well as the supporting subsystems. </p>'
+        //x: 273.9136362688889, y: -125.6758405692897, z: -240.5870151590867
+        controls.enabled = false;
+        gsap.to(camera.position, {
+            duration: 1,
+            x: 299.84,
+            y: 217.51,
+            z: -107.22,
+            onUpdate: () => {
+                controls.enabled = false;
+                controls.update();
             },
             onComplete: () => {
                 controls.enabled = true;
                 // controls.reset();
+                // camera.lookAt(scene.position);
             }
         });
 
+        $(".annotation").html(html)
+
+    })
+    $('#item5').on("click", function () {
+        var html = '<p><strong>The spacecraft bus</strong></p> <p>The spacecraft bus houses all the command and control subsystems, and provides electrical power, attitude control, communications, data handling, propulsion and thermal control to the spacecraft. The bus also houses the thrusters and the fuel. </p>'
+        //{x: -59.51715535040868, y: -129.57618532092255, z: 212.41952869089585}
+        controls.enabled = false;
+        gsap.to(camera.position, {
+            duration: 1,
+            x: -59.51,
+            y: -129.57,
+            z: 212.41,
+            onUpdate: () => {
+                controls.enabled = false;
+                controls.update();
+            },
+            onComplete: () => {
+                controls.enabled = true;
+            }
+        });
+
+        $(".annotation").html(html)
+
+    })
+    $('#item6').on("click", function () {
+        var html = '<p><strong>Sunshield</strong></p> <p>The sunshield is made up of five kite shaped layers that each have a specific thickness, size and material composition to act as a passive radiator. Micrometeorite impacts can tear the layers, so they have rip-stops arranged in grids to prevent the tears from spreading. </p>'
+        // x: 18.246989624581754, y: 203.93434046228484, z: 400.48551655551853
+        controls.enabled = false;
+        gsap.to(camera.position, {
+            duration: 1,
+            x: 18.24,
+            y: 203.93,
+            z: 400.48,
+            onUpdate: () => {
+                controls.enabled = false;
+                controls.update();
+            },
+            onComplete: () => {
+                controls.enabled = true;
+                // controls.reset();
+                // camera.lookAt(scene.position);
+            }
+        });
+
+        $(".annotation").html(html)
+
+    })
+    $('#item7').on("click", function () {
+        var html = '<p><strong>Solar panel</strong></p> <p> Webb\'s 20 foot solar panel is folded up like an accordion at launch, and is designed to provide all the energy requirements of the spacecraft. </p>'
+        // x: 222.55358757985198, y: -86.85289060711541, z: -228.56628236938909
+        controls.enabled = false;
+        gsap.to(camera.position, {
+            duration: 1,
+            x: 222.55,
+            y: -86.85,
+            z: -228.56,
+            onUpdate: () => {
+                controls.enabled = false;
+                controls.update();
+            },
+            onComplete: () => {
+                controls.enabled = true;
+                // controls.reset();
+                // camera.lookAt(scene.position);
+            }
+        });
+
+        $(".annotation").html(html)
 
     })
 
@@ -240,218 +379,83 @@ function init() {
         $('.warningicon3d').fadeOut("slow");
     })
 
-    // const Boxmesh = new THREE.Mesh(
-    //     new THREE.BoxGeometry(400, 400, 400),
-    //     new THREE.MeshPhongMaterial({
-    //         color: 0x156289,
-    //         emissive: 0x072534,
-    //         side: THREE.DoubleSide,
-    //         shading: THREE.FlatShading
-    //     })
-    // );
-    // scene.add(Boxmesh);
-
-    // var spritey = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    // spritey.position.set(0, 200, 170);
-    // scene.add(spritey);
-    var geometrySphere = new THREE.SphereGeometry(10, 32, 32); // (radius, widthSegments, heightSegments)
-    var materialSphere = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    var geometrySphere = new THREE.SphereGeometry(6, 32, 32); // (radius, widthSegments, heightSegments)
+    var materialSphere = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
     var marker1 = new THREE.Mesh(geometrySphere, materialSphere);
-    marker1.position.set(0, 170, 80);
+    marker1.position.set(-50, 250, 0);
+    // marker1.position.set(0, 200, 80); //original setting
     scene.add(marker1);
 
-    var marker2 = new THREE.Mesh(geometrySphere, materialSphere);
-    marker2.position.set(20, 80, 100);
-    scene.add(marker2);
-
-
+    // var geometrySphere1 = new THREE.SphereGeometry(6, 32, 32); // (radius, widthSegments, heightSegments)
+    // var materialSphere1 = new THREE.MeshBasicMaterial({ color: 0xffffff });
     var marker3 = new THREE.Mesh(geometrySphere, materialSphere);
-    marker3.position.set(40, 150, 120);
+    marker3.position.set(-200, 120, 250);
+    // marker1.position.set(0, 200, 80); //original setting
     scene.add(marker3);
 
-    // var spritey3 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    // spritey3.position.set(-50, 120, 280);
-    // scene.add(spritey3);
+    // var geometrySphere3 = new THREE.SphereGeometry(6, 32, 32); // (radius, widthSegments, heightSegments)
+    // var materialSphere3 = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    // var marker3 = new THREE.Mesh(geometrySphere3, materialSphere3);
+    // marker3.position.set(40, 120, 120);
+    // scene.add(marker3);
 
-    // var spritey2 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    // spritey2.position.set(-80, 80, 220);
-    // scene.add(spritey2);
+    // var marker4 = new THREE.Mesh(geometrySphere, materialSphere);
+    // marker4.position.set(0, -80, 80);
+    // scene.add(marker4);
 
-    // var spritey4 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    // spritey4.position.set(150, -10, 0);
-    // scene.add(spritey4);
+    // var marker5 = new THREE.Mesh(geometrySphere, materialSphere);
+    // marker5.position.set(0, 10, 150);
+    // scene.add(marker5);
 
-    // var spritey5 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    // spritey5.position.set(0, 0, 0);
-    // scene.add(spritey5);
+    // var marker6 = new THREE.Mesh(geometrySphere, materialSphere);
+    // marker6.position.set(50, 10, 150);
+    // scene.add(marker6);
 
-    // var spritey6 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    // spritey6.position.set(-35, 170, -80);
-    // scene.add(spritey6);
+    // var marker7 = new THREE.Mesh(geometrySphere, materialSphere);
+    // marker7.position.set(0, 200, 0);
+    // scene.add(marker7);
 
-    // var spritey7 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    // spritey7.position.set(0, 0, 0);
-    // scene.add(spritey7);
+    // var marker8 = new THREE.Mesh(geometrySphere, materialSphere);
+    // marker8.position.set(0, 200, 0);
+    // scene.add(marker8);
 
-    // var spritey8 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    // spritey8.position.set(-50, 25, 240);
-    // scene.add(spritey8);
+    // var domEvents = new THREEx.DomEvents(camera, renderer.domElement)
 
-    // var spritey9 = makeTextSprite(" " + "+" + " ", { fontsize: 40, backgroundColor: { r: 255, g: 100, b: 100, a: 1 } });
-    // spritey9.position.set(30, 15, 200);
-    // scene.add(spritey9);
-    // =======================================================
-    // Anotation
-    // ==========================================================
+    // domEvents.addEventListener(marker1, 'click', function (event) {
+    //     $(".annotation").html("Text1")
+    // }, false)
 
-    function makeTextSprite(message, parameters) {
-        if (parameters === undefined) parameters = {};
+    // domEvents.addEventListener(marker2, 'click', function (event) {
+    //     // Vector3 {x: -184.55814843743806, y: 219.4443052128568, z: 407.63598495424117}
+    //     $(".annotation").html("Text2")
+    // }, false)
 
-        var fontface = parameters.hasOwnProperty("fontface") ?
-            parameters["fontface"] : "Arial";
+    // domEvents.addEventListener(marker3, 'click', function (event) {
+    //     $(".annotation").html("Text3")
+    // }, false)
+    // domEvents.addEventListener(marker7, 'click', function (event) {
+    //     var html = '<p><strong>ISIM</strong></p> <p> The payload which bears the name ISIM (Integrated Science Instrument Module) and has the shape of a quadrangular box in which are grouped the four scientific instruments which must analyze the infrared radiation collected.</p>'
+    //     // x: 516.2102497201661, y: 252.31734295943687, z: -210.3875864344879
+    //     controls.enabled = false;
+    //     gsap.to(camera.position, {
+    //         duration: 1,
+    //         x: 516.21,
+    //         y: 252.31,
+    //         z: -210.38,
+    //         onUpdate: () => {
+    //             controls.enabled = false;
+    //             controls.update();
+    //         },
+    //         onComplete: () => {
+    //             controls.enabled = true;
+    //             // controls.reset();
+    //             // camera.lookAt(scene.position);
+    //         }
+    //     });
 
-        var fontsize = parameters.hasOwnProperty("fontsize") ?
-            parameters["fontsize"] : 24;
-
-        var borderThickness = parameters.hasOwnProperty("borderThickness") ?
-            parameters["borderThickness"] : 4;
-
-        var borderColor = parameters.hasOwnProperty("borderColor") ?
-            parameters["borderColor"] : { r: 0, g: 0, b: 0, a: 1.0 };
-
-        var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
-            parameters["backgroundColor"] : { r: 255, g: 255, b: 255, a: 1.0 };
-
-        //var spriteAlignment = parameters.hasOwnProperty("alignment") ?
-        //	parameters["alignment"] : THREE.SpriteAlignment.topLeft;
-
-        // var spriteAlignment = THREE.SpriteAlignment.topLeft;
-
-
-        var canvas = document.createElement('canvas');
-        var context = canvas.getContext('2d');
-        context.font = "Bold " + fontsize + "px " + fontface;
-
-        // get size data (height depends only on font size)
-        var metrics = context.measureText(message);
-        var textWidth = metrics.width;
-
-        // background color
-        context.fillStyle = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
-            + backgroundColor.b + "," + backgroundColor.a + ")";
-        // border color
-        context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
-            + borderColor.b + "," + borderColor.a + ")";
-
-        context.lineWidth = borderThickness;
-        roundRect(context, borderThickness / 2, borderThickness / 2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
-        // 1.4 is extra height factor for text below baseline: g,j,p,q.
-
-        // text color
-        context.fillStyle = "rgba(255, 255, 255, 1.0)";
-        context.textAlign = "center"
-
-        // context.fillText(message, borderThickness, fontsize + borderThickness);
-        context.fillText(message, borderThickness + 30, fontsize + borderThickness + 30);
-
-        // canvas contents will be used for a texture
-        var texture = new THREE.Texture(canvas)
-        texture.needsUpdate = true;
-
-        var spriteMaterial = new THREE.SpriteMaterial(
-            { map: texture, useScreenCoordinates: false, });
-        var sprite = new THREE.Sprite(spriteMaterial);
-        sprite.scale.set(200, 100, 2.0);
-        return sprite;
-    }
-
-    function roundRect(ctx, x, y, w, h, r) {
-        // ctx.beginPath();
-        // ctx.moveTo(x + r, y);
-        // ctx.lineTo(x + w - r, y);
-        // ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-        // ctx.lineTo(x + w, y + h - r);
-        // ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-        // ctx.lineTo(x + r, y + h);
-        // ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-        // ctx.lineTo(x, y + r);
-        // ctx.quadraticCurveTo(x, y, x + r, y);
-        // ctx.closePath();
-        // ctx.fill();
-        // ctx.stroke();
-        var x = 32;
-        var y = 53;
-        var radius = 30;
-        var startAngle = 0;
-        var endAngle = Math.PI * 2;
-
-        ctx.fillStyle = 'rgb(0, 0, 0)';
-        ctx.beginPath();
-        ctx.arc(x, y, radius, startAngle, endAngle);
-        ctx.fill();
-
-        ctx.strokeStyle = 'rgb(255, 255, 255)';
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.arc(x, y, radius, startAngle, endAngle);
-        ctx.stroke();
-    }
-
-
-
-
-    var domEvents = new THREEx.DomEvents(camera, renderer.domElement)
-
-    domEvents.addEventListener(marker1, 'mousemove', function (event) {
-        // new_material.color = marker1.material.color;
-        // mesh.material = new_material;
-        // return renderer.render(scene, camera);
-        console.log("test")
-        gsap.to(marker1, {
-            duration: 1,
-            scale: 2,
-            onUpdate: () => {
-                controls.enabled = false;
-
-            },
-            onComplete: () => {
-                controls.enabled = true;
-
-
-            }
-        });
-    });
-
-    domEvents.addEventListener(marker1, 'click', function (event) {
-        $(".annotation").html("Text1")
-    }, false)
-    domEvents.addEventListener(marker2, 'click', function (event) {
-        $(".annotation").html("Text2")
-    }, false)
-    domEvents.addEventListener(marker3, 'click', function (event) {
-        $(".annotation").html("Text3")
-    }, false)
-    domEvents.addEventListener(spritey4, 'click', function (event) {
-        $(".annotation").html("Text4")
-    }, false)
-    domEvents.addEventListener(spritey5, 'click', function (event) {
-        $(".annotation").html("Text5")
-    }, false)
-    domEvents.addEventListener(spritey6, 'click', function (event) {
-        $(".annotation").html("Text6")
-    }, false)
-    domEvents.addEventListener(spritey7, 'click', function (event) {
-        $(".annotation").html("Text7")
-    }, false)
-    domEvents.addEventListener(spritey8, 'click', function (event) {
-        $(".annotation").html("Text8")
-    }, false)
-    domEvents.addEventListener(spritey9, 'click', function (event) {
-        $(".annotation").html("Text9")
-    }, false)
-
-
+    //     $(".annotation").html(html)
+    // }, false)
 
 
     // =======================================================
