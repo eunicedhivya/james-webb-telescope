@@ -113,7 +113,7 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
 
 .the-range .tr-pointedLight{
     position: absolute;
-    top: 36px;
+    top: -18px;
     width: 100%;
     z-index: 1;
 }
@@ -149,7 +149,7 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
 }
 .the-range .hubble-grp{
     position: absolute;
-    top: 40px;
+    top: -6px;
     width: 35px;
     left: 36%;
     transform: translateX(-36%);
@@ -166,7 +166,7 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
 }
 .the-range .webb-grp{
     position: absolute;
-    top: 40px;
+    top: -6px;
     width: 85px;
     left: 65%;
     transform: translateX(-65%);
@@ -798,9 +798,9 @@ video{
 
     .the-range .tr-timeline {
         position: absolute;
-        top: 55px;
+        top: 33px;
         z-index: 3;
-        width: 22px;
+        width: 23px;
     }
 
     .the-range .tr-txt-4 {
@@ -872,7 +872,7 @@ video{
     .the-range .tr-webb-limit {
         position: absolute;
         top: 70px;
-        width: 0.08em;
+        width: 0.095em;
         left: 63%;
         transform: translateX(-63%);
         z-index: 5;
@@ -880,7 +880,7 @@ video{
     .the-range .tr-hubble-limit {
         position: absolute;
         top: 75px;
-        width: 0.08em;
+        width: 0.11em;
         left: 36%;
         transform: translateX(-36%);
         z-index: 5;
