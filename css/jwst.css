@@ -650,27 +650,7 @@ video{
       right: -40px;
       position: absolute;
     }
-    /* #comparision ul li {
-        padding: 7px 15px;
-        transition: 1s ease-in-out;
-    }
-    .compCol {
-        position: relative;
-    }
-    #prev {
-        position: absolute;
-        left: 46%;
-        top: 58%;
-        font-size: 20px;
-    }
-    #next {
-        position: absolute;
-        right: 45%;
-        top: 58%;
-        font-size: 20px;
-    }
-
-     */
+    
 
      #comparision .col:first-child {
         order: 1;
@@ -678,6 +658,11 @@ video{
     #comparision .col:last-child {
         order: 2;
     } 
+
+    #comparision .col img {
+        width: 35%;
+        margin: 0 auto;
+    }
 
 }
 @media (min-width:1024px){
