@@ -433,6 +433,7 @@ video{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    opacity: 0;
 }
 
 
@@ -489,7 +490,7 @@ video{
     margin: 0 auto;
 }
 #comparision .col img {
-    max-width: 480px;
+    max-width: 325px;
 }
 #comparision ul li {
     font-family: "Montserrat";
@@ -584,12 +585,7 @@ video{
      #comparision {
         flex-direction: column;
     }
-    #comparisonList {
-        /* display: flex; */
-        /* position: relative; */
-        /* transform: translateX(707px); */
-        /* transition: all 0.2s; */
-    }
+    
 
     .carousel-menu {
         align-items: center;
@@ -669,13 +665,18 @@ video{
     .carousel-button{
         display: none;
     }
+
+    .carousel-menu .carousel_links li{
+        font-size: 12px !important;
+    }
+
     #backtorocket, #backtorocket2, #backtorocket3{
         width: 300px;
     }
     #ariane svg{ 
         width: 25%;
-    margin: 0 auto;
-    top: 30%;
+        margin: 0 auto;
+        top: 30%;
         transform: translate(-50%, -50%);
         left: 50%;
     }
@@ -692,8 +693,16 @@ video{
         margin-top: 45vh;
     }
 
-    #origins img, #origins #origins-para1, #origins #origins-para2{
+    #origins #origins-para1, #origins #origins-para2{
         width: 50%;
+    }
+
+    #origins img {
+        position: absolute;
+        width: 30%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
     }
     .telescope-steps {
            top: 50%;
@@ -710,5 +719,11 @@ video{
     top: 50%;
     left: 34%;
     }
+
+    #shine-effect {
+        width: 100%;
+        height: 200%;
+    }
+
 
 }

@@ -624,10 +624,6 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity: 1,
             ease: Power0.easeOut
         })
-        .from('#ariane-svg', 1, {
-            opacity: 0,
-            ease: Power0.easeOut
-        })
         .from('#backtorocket', 4, {
             y: 700,
             opacity: 1,
@@ -653,7 +649,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, "one")
         .from('#ariane-svg', 1, {
             y: 100,
-            opacity: 1,
+            opacity: 0,
             ease: Power0.easeOut
         }, "one")
         .to('#ariane-svg', 4, {
@@ -677,6 +673,18 @@ document.addEventListener('DOMContentLoaded', function () {
             y: 200,
             ease: Power0.easeOut
         }, "one")
+        .to('#fairing-left', 4, {
+            x: 0,
+            y: 0,
+            rotation: 0, transformOrigin: "left 100%",
+            ease: Power0.easeOut
+        }, "three")
+        .to('#fairing-right', 4, {
+            x: 0,
+            y: 0,
+            rotation: 0, transformOrigin: "left 100%",
+            ease: Power0.easeOut
+        }, "three")
         .from('#backtorocket2', 4, {
             y: 700,
             opacity: 1,
