@@ -719,6 +719,10 @@ video{
 }
 
 @media (max-width:767px){
+    .credits {
+        margin-top: -30%;
+    }
+
     .images {
         width: 278%;
         height: 100%;

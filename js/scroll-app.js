@@ -7,7 +7,7 @@ document.getElementById('enable3dwindow').addEventListener("click", function () 
     // alert("test");
 })
 document.getElementById('disable3dwindow').addEventListener("click", function () {
-    document.getElementById('cover-3d').style.display = "block";
+    document.getElementById('cover-3d').style.display = "flex";
     document.getElementsByTagName('body')[0].removeAttribute("style");
     $('.model').removeClass("active")
     $('#disable3dwindow').css("display", "none")
