@@ -603,13 +603,13 @@ document.addEventListener('DOMContentLoaded', function () {
             ease: Power0.easeOut
         }, "one")
         .from('#fairing-left', 4, {
-            x: 300,
+            x: 350,
             y: -10,
             // rotation: 45, transformOrigin: "left 100%",
             ease: Power0.easeOut
         }, "oneT")
         .from('#fairing-right', 4, {
-            x: -300,
+            x: -350,
             y: -10,
             // rotation: -45, transformOrigin: "left 100%",
             ease: Power0.easeOut
