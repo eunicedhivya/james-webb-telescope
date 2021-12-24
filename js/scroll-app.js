@@ -249,16 +249,6 @@ document.addEventListener('DOMContentLoaded', function () {
             top: "-100vh",
             ease: Power0.easeOut
         })
-        .to('#shine-effect', 2, {
-            opacity: 1,
-            right: "50%",
-            ease: Power0.easeOut
-        })
-        .to('#shine-effect', 2, {
-            opacity: 0,
-            right: "-92%",
-            ease: Power0.easeOut
-        })
         .from('#origins-para3', 4, {
             y: 20,
             top: "100vh",
