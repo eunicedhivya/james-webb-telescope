@@ -437,10 +437,10 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
     border: 1px solid #000;
 }
 
-/* .model {
-    width: 100vh;
+.model {
+    width: 100vw;
     height: 100vh;
-}*/
+}
 
 
 .model.active{
