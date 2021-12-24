@@ -442,7 +442,8 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
 
 .model {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 100px);
+    /* height: 100vh; */
 }
 
 
@@ -451,14 +452,19 @@ background: linear-gradient(-180deg, rgba(0,0,0,0) 7%, rgba(0,0,0,0.925274333366
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    height: calc(100% - 100px);
     z-index: 8;
+} 
+
+.model iframe{
+    margin-top: 100px;
 } 
 #disable3dwindow {
     position: absolute;
     left: 0;
     /* bottom: 40px; */
-    top: 0;
+    top: 100px;
     width: 100px;
     height: 40px;
     z-index: 100;
@@ -724,6 +730,20 @@ video{
     margin-bottom: 20px;
 }
 
+.scroll-icon2{
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    transition: all 0.5s;
+    opacity:0;
+}
+
+#jwst-3d.active .scroll-icon2{
+    opacity:1;
+}
+
 @media (max-width:767px){
     .desktop-visible{
         display: none;
@@ -744,12 +764,12 @@ video{
     }
 
     .images {
-        width: 278%;
+            width: 300%;
         height: 100%;
         position: relative;
         z-index: -1;
         top: -10%;
-        left: -92%;
+        left: -103%;
     }
     #othervideos #videoList{
         grid-template-columns: 100%;
@@ -784,7 +804,7 @@ video{
     }
 
      #myimg {
-    transform: scale(2.5) translateY(40%);
+    transform: scale(2.5) translateY(50%);
     }
 
     #myimg2 {
@@ -795,8 +815,17 @@ video{
     margin-left: 2px;
     }
 
+    #telescope h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        text-align: center;
+    }
+
     .telescope-steps {
-        top: 240%;
+        top: 270%;
         width: 80%;
     }
 
@@ -812,6 +841,7 @@ video{
 
      #comparision {
         flex-direction: column;
+        padding-top: 100px;
     }
     
 
@@ -891,11 +921,12 @@ video{
     .the-range{
         width: 100%;
         max-width: 400px;
-        margin-left: auto ;
-        margin-right: auto ;
+        margin-left: auto;
+        margin-right: auto;
         position: relative;
         height: 700px;
-        margin-bottom: 30px;
+        margin-bottom: 0;
+        margin-top: 55px;
         overflow: hidden;
     }
 
@@ -927,14 +958,38 @@ video{
     z-index: 5;
 }
 
+.sticky-desktop{
+    display: none;
+}
+.sticky-mobile{
+    /* display: block; */
+     position: fixed;
+            top: 0;
+            z-index: 1000;
+}
+
+
+
 }
 @media (min-width:1024px){
+    .sticky-desktop{
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+    }
+    .sticky-mobile{
+        display: none;
+    }
+    .main-title{
+        font-size: 36px;
+    line-height: 42px;
+    }
     .mobile-visible{
         display: none;
     }
     #telescope h3 {
         position: absolute;
-        top: 5%;
+        top: 15%;
         left: 50%;
         transform: translateX(-50%);
         z-index: 10;
@@ -943,7 +998,7 @@ video{
 
     .the-range{
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
         margin-left: auto ;
         margin-right: auto ;
         position: relative;
@@ -1016,7 +1071,7 @@ video{
     }
     .the-range .tr-hubble-icon {
         position: absolute;
-        top: 20px;
+        top: 30px;
         width: 32px;
         left: 36%;
         transform: translateX(-36%);
@@ -1025,7 +1080,7 @@ video{
 
     .the-range .tr-webb-icon {
         position: absolute;
-        top: 19px;
+        top: 30px;
         width: 69px;
         left: 65%;
         transform: translateX(-65%);
@@ -1056,14 +1111,14 @@ video{
         position: absolute;
         top: 245px;
         width: 65px;
-        left: 83px;
+        left: 68px;
         z-index: 5;
     }
     .the-range .tr-txt-6 {
         position: absolute;
         top: 371px;
         width: 60px;
-        left: 164px;
+        left: 150px;
         z-index: 5;
     }
 
@@ -1094,6 +1149,7 @@ video{
         top: 30%;
         transform: translate(-50%, -50%);
         left: 70%;
+            margin-top: 50px;
     }
     #intro h1, #intro p{
         width: 100%;
@@ -1125,6 +1181,7 @@ video{
         width: 30%;
         top: 50%;
         left: 50%;
+            margin-top: 50px;
         transform: translateX(-50%) translateY(-50%);
     }
     .telescope-steps {
@@ -1134,14 +1191,15 @@ video{
     } 
 
     #telescope #myimg {
-        margin-left: 20%;
-        margin-top: -80px;
-    }
+    margin-left: 20%;
+    margin-top: 20px;
+}
 
     #myimg2 {
        width: 31%;
         top: 50%;
         left: 54%;
+        margin-top:25px;
     }
 
     #shine-effect {
@@ -1163,21 +1221,26 @@ video{
         /* opacity: 0; */
     }
 
-    .loader {
-        border: 16px solid #f3f3f3; /* Light grey */
-        border-top: 16px solid #3498db; /* Blue */
-        border-radius: 50%;
-        width: 80px;
-        height: 80px;
-        animation: spin 2s linear infinite;
-        position: absolute;
-            top: 50%;
-            left: 45%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
+    
+        #telescope-range, #origins {
+            padding-top: 100px;
         }
 
-    
+     .scroll-icon2{ bottom: 25px; }
+#comparision { padding-top: 100px; }
+
+}
 
 
+@media (min-width:1400px){
+    #telescope-range{ padding-top: 200px; }
+
+    #disable3dwindow { top: 150px; left: 100px; }
+    #telescope #myimg { margin-top: 80px; }
+    #telescope h3 { top: 15%; }
+    #ariane svg { top: 35%;margin-top: 0;}
+    #myimg2 { margin-top: -35px; }
+    .images { width: 100%; height: 135%;  }
+
+    .scroll-icon2{ bottom: 100px; }
 }

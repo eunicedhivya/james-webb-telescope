@@ -79,7 +79,7 @@ html.is-leaving .transition-fade {
     padding: 5px 10px;
     position: absolute;
 }
-#resetCam{ right: 20px; top: 20px; }
+#resetCam{ right: 100px; top: 60px; }
 #zoom-in{ left: 20px; top: 20px; }
 #zoom-out{ left: 55px; top: 20px; }
 #resetCam:hover{
