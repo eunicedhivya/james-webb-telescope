@@ -13,20 +13,20 @@ document.getElementById('disable3dwindow').addEventListener("click", function ()
     $('#disable3dwindow').css("display", "none")
 })
 
-var myLoader;
+// var myLoader;
 
-function myPreloader() {
-    myLoader = setTimeout(showPage, 3000);
-}
+// function myPreloader() {
+//     myLoader = setTimeout(showPage, 3000);
+// }
 
-function showPage() {
-    document.getElementById("loader").style.display = "none";
-    // document.getElementById("tv9-interactive").style.display = "block";
-    $(".loader").fadeOut();
-    $(".tv9-interactive").fadeIn();
-}
+// function showPage() {
+//     document.getElementById("loader").style.display = "none";
+//     // document.getElementById("tv9-interactive").style.display = "block";
+//     $(".loader").fadeOut();
+//     $(".tv9-interactive").fadeIn();
+// }
 
-window.onload = myPreloader;
+// window.onload = myPreloader;
 
 var images = [
     "https://ik.imagekit.io/u1xskcbfl6j/ezgif-5-799e3f6b9c-jpg/ezgif-frame-114.jpg",
