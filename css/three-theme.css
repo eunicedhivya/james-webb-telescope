@@ -352,6 +352,11 @@ html.is-leaving .transition-fade {
 
 @media screen and (min-width: 767px) {
 
+    #resetCam {
+        right: 21px;
+        top: 23px;
+    }
+
   
    
 }
