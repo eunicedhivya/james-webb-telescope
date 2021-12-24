@@ -13,20 +13,6 @@ document.getElementById('disable3dwindow').addEventListener("click", function ()
     $('#disable3dwindow').css("display", "none")
 })
 
-// var myLoader;
-
-// function myPreloader() {
-//     myLoader = setTimeout(showPage, 3000);
-// }
-
-// function showPage() {
-//     document.getElementById("loader").style.display = "none";
-//     // document.getElementById("tv9-interactive").style.display = "block";
-//     $(".loader").fadeOut();
-//     $(".tv9-interactive").fadeIn();
-// }
-
-// window.onload = myPreloader;
 
 var images = [
     "https://ik.imagekit.io/u1xskcbfl6j/ezgif-5-799e3f6b9c-jpg/ezgif-frame-114.jpg",
@@ -146,34 +132,12 @@ var images = [
 ];
 
 
-// var video = document.getElementsByTagName('video')[0];
-// var videoDuration;
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
     var controller = new ScrollMagic.Controller();
 
-    // var timelineIntro = new TimelineMax();
-
-    // timelineIntro
-    //     .from('.main-desc', 1, {
-    //         x: 0,
-    //         y: -50,
-    //         opacity: 0,
-    //         ease: Power0.easeOut
-    //     })
-    //     .to('.main-desc', 12, {
-    //         x: 0,
-    //         y: 0,
-    //         opacity: 1,
-    //         ease: Power0.easeOut
-    //     })
-
-    // var scene = new ScrollMagic.Scene({
-    //     triggerElement: '#intro',
-    //     duration: '200%',
-    //     triggerHook: 0,
-    // }).setTween(timelineIntro).setPin("#intro").addTo(controller)
 
     var timelineIntro = new TimelineMax();
     timelineIntro.to('#forth', 6, {
