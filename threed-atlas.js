@@ -65,7 +65,7 @@ function init() {
     // Load the 3D model
     loader = new THREE.GLTFLoader();
     // loader.load('assets/3d/scene-light3.gltf', function (gltf) {
-    loader.load('https://www.eunicedhivya.com/james-webb-telescope/scene-light3.gltf', function (gltf) {
+    loader.load('https://www.eunicedhivya.com/james-webb-telescope/assets/3d/scene-light3.gltf', function (gltf) {
         model = gltf.scene
         // model.position.set(0, -1, 0)
         model.scale.set(0.3, 0.3, 0.3)
