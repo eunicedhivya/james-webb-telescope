@@ -765,6 +765,10 @@ video{
         bottom: 12%;
     }
 
+    #origins #origins-para1, #origins #origins-para2{
+        left: 11%;
+    }
+
     #range-para1, #range-para2, #lagrange-para1{
         width: 80%;
     }
@@ -1080,6 +1084,10 @@ video{
 
     #origins #origins-para1, #origins #origins-para2, #origins-para3{
         width: 50%;
+    }
+
+    #origins #origins-para1, #origins #origins-para2{
+        left: 24%;
     }
 
     #origins img {
