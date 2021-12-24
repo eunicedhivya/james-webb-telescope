@@ -603,13 +603,13 @@ document.addEventListener('DOMContentLoaded', function () {
             ease: Power0.easeOut
         }, "one")
         .from('#fairing-left', 4, {
-            x: 350,
+            x: 300,
             y: -10,
             // rotation: 45, transformOrigin: "left 100%",
             ease: Power0.easeOut
         }, "oneT")
         .from('#fairing-right', 4, {
-            x: -350,
+            x: -300,
             y: -10,
             // rotation: -45, transformOrigin: "left 100%",
             ease: Power0.easeOut
@@ -653,7 +653,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .to('#ariane', 2, {
             opacity: 0,
             ease: Power0.easeOut
-        })
+        }, "two")
 
     var scene6 = new ScrollMagic.Scene({ triggerElement: "#ariane", duration: 10000, triggerHook: 0 })
         .setTween(timelineRocket)
