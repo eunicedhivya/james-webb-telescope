@@ -910,7 +910,13 @@ video{
 
     }
 
-
+.the-range .tr-txt-6 {
+    position: absolute;
+    top: 525px;
+    width: 100px;
+    left: 180px;
+    z-index: 5;
+}
 
 }
 @media (min-width:1024px){
@@ -942,6 +948,13 @@ video{
         top: 33px;
         z-index: 3;
         width: 23px;
+    }
+
+    .the-range .tr-pointedLight {
+        position: absolute;
+        top: -11px;
+        width: 100%;
+        z-index: 1;
     }
 
     .the-range .tr-txt-4 {
@@ -1013,30 +1026,33 @@ video{
     .the-range .tr-webb-limit {
         position: absolute;
         top: 70px;
-        width: 0.095em;
+        width: 0.105em;
         left: 63%;
         transform: translateX(-63%);
         z-index: 5;
     }
+
     .the-range .tr-hubble-limit {
         position: absolute;
         top: 75px;
-        width: 0.11em;
+        width: 0.124em;
         left: 36%;
         transform: translateX(-36%);
         z-index: 5;
     }
 
+    
+
     .the-range .tr-txt-5 {
         position: absolute;
-        top: 247px;
+        top: 245px;
         width: 65px;
         left: 83px;
         z-index: 5;
     }
     .the-range .tr-txt-6 {
         position: absolute;
-        top: 359px;
+        top: 371px;
         width: 60px;
         left: 164px;
         z-index: 5;
