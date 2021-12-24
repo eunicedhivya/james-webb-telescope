@@ -727,6 +727,9 @@ video{
 }
 
 @media (max-width:767px){
+    .desktop-visible{
+        display: none;
+    }
     .scroll-img{
         width: 100% !important;
         max-width: 50px;
@@ -912,6 +915,9 @@ video{
 
 }
 @media (min-width:1024px){
+    .mobile-visible{
+        display: none;
+    }
     #telescope h3 {
         position: absolute;
         top: 5%;
