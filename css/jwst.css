@@ -21,18 +21,22 @@ body{
 
 .scroll-img{
     width: 100% !important;
-    max-width: 80px;
+    max-width: 30px;
     margin: 0 auto;
 }
-#scroll2{
-    transform: translateY(150%);
+ #scroll2{
+    transform: translateY(500%);
 }
+ #scroll7{
+    transform: translateY(200%);
+}
+/*
 #scroll6{
     transform: translateY(-210%);
 }
 #scroll7{
     transform: translateY(85%);
-}
+} */
 .tv9-interactive section{
     padding:20px;
     box-sizing: border-box;
@@ -723,6 +727,17 @@ video{
 }
 
 @media (max-width:767px){
+    .scroll-img{
+        width: 100% !important;
+        max-width: 50px;
+        margin: 0 auto;
+    }
+    #scroll2{
+        transform: translateY(300%);
+    }
+    #scroll7{
+        transform: translateY(200%);
+    }
     .credits {
         margin-top: -30%;
     }
