@@ -910,11 +910,20 @@ video{
 
     }
 
+    .the-range .tr-webb-limit {
+        position: absolute;
+        top: 90px;
+        width: 0.156em;
+        left: 54%;
+        transform: translateX(-63%);
+        /* z-index: 5; */
+    }
+
 .the-range .tr-txt-6 {
-    position: absolute;
-    top: 525px;
+        position: absolute;
+    top: 544px;
     width: 100px;
-    left: 180px;
+    left: 166px;
     z-index: 5;
 }
 
